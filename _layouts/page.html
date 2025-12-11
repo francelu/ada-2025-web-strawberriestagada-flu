@@ -15,9 +15,7 @@ layout: base
         </div>
       {% endif %}
 
-      <div style="text-align: justify;">
-        {{ content | markdownify }}
-      </div>
+      {{ content }}
 
       {% if page.after-content %}
         <div class="after-content">
