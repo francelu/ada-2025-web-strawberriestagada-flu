@@ -136,8 +136,21 @@ While the immediate emotional spike of negativity and anxiety is short-lived, th
 
 ## The Contagion of Conflict: How Attacker Language Shapes Victim Response?
 
+When one community attacks another, the emotional tone of the assault itself may determine how deeply the target is wounded. We investigated whether specific linguistic features in hostile posts act as psychological triggers that create predictable patterns in how victim communities respond. We used correlation analysis across multiple time segments to trace how the emotional and cognitive composition of an attack influences subsequent linguistic shifts in the targeted community. The visualization below shows which attacker features have the strongest ripple effect.
+
 {% include_relative figs/attack_LIWC_correlation.html %}
 
+Our analysis reveals that profanity is the most powerful linguistic trigger in attacks, with swear words in hostile posts having the strongest influence on victim responses.
+
+{% include_relative figs/influential-attack.html %}
+
+The data clearly shows patterns of emotional contagion and behavioral mirroring:
+
+- Swear words in attacks trigger anger responses: the strongest correlation (r = 0.021) links attacker profanity to increased anger language in victim communities,
+- Victims mirror profanity: target communities significantly increase their own swear word usage when attacked with profanity (r = 0.020),
+- Sexual language escalates: attacks containing profanity also correlate with increased sexual language in responses (r = 0.019).
+
+Interestingly, religious language in attacks correlates with increased social language in victim responses (r = 0.017). This suggests that communities may respond to religiously themed attacks by strengthening social bonds. Conversely, sadness in attacks correlates with reduced social language in targets (r = -0.016), indicating that emotionally vulnerable attacks may suppress community engagement. Although these correlations are statistically significant, the effect sizes are generally small. This suggests that, although attacker language influences victim responses, the relationship is subtle and mediated by many other factors. 
 
 ## Analysis of Response to Conflict
 
