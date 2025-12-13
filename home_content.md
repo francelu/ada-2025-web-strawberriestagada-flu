@@ -163,6 +163,11 @@ This section examines how a subreddit under attack may respond to the attacking 
 
 
 ### Random Forest Analysis
+*TODO: structure ?*
+
+We use a random forest model to determine which characteristics of incoming conflicts best explain differences in targeted subreddits' linguistic responses.
+
+{% include_relative figs/body_title_random_forest.html %}
 
 
 # Snowball Effect: ...
