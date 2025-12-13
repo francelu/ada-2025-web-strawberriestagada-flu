@@ -209,6 +209,20 @@ These results suggest that online attacks systematically create cycles of negati
 
 # Community Clusters: How do the linguistic profiles of online community clusters relate to and predict the propagation of conflict between communities?
 
+*TODO: explainations of methods*
+
+*TODO: necessary the static quiz index ??*
+
+{% include_relative figs/quiz_static_index.html %}
+
+*TODO: explain below figure*
+
+{% include_relative figs/cluster_profile.html %}
+
+*TODO: fix quiz*
+
+[Start the Cluster Quiz]({{ "assets/img/quiz_static/index.html" | relative_url }}){: .btn .btn-primary }
+
 
 # From Digital to Real World
 *TODO: 2016 U.S.A. presidential election*
