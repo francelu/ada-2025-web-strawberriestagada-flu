@@ -170,16 +170,41 @@ We use a random forest model to determine which characteristics of incoming conf
 {% include_relative figs/body_title_random_forest.html %}
 
 
-# Snowball Effect: ...
+# Snowball Effect:  How do repeated inter-subreddit conflicts shape the linguistic and emotional tone of both attackers and targets over time, and do these patterns suggest a cumulative negativity ?
+
+We use Granger causality tests to determine whether being attacked (receiving negative sentiment posts) causally influences a community's subsequent negative behavior. These tests examine whether knowledge of past values in one time series (attacks received) improves the prediction of another time series (negative behavior emitted).
 
 
 ## Community Response Pattern
+*TODO: structure ?*
+
+{% include_relative figs/community_response_pattern.html %}
+
+The Granger causality heatmap below shows which communities have statistically significant causal relationships between being attacked and subsequently exhibiting negative behavior. Darker colors indicate stronger effects.
+
+{% include_relative figs/granger_analysis.html %}
+
+Based on the heatmap, we can conclude that attacks cause negative behavior in certain communities. Among them, `subredditdram` is the most vulnerable; attacks consistently lead to negative behavior for more than five hours. `politics` is highly reactive, with immediate and sustained negative responses, while `news` has a quick reaction, but of shorter duration. The plot shows that, in general, drama and politics communities are most vulnerable to attack. 
 
 
-## Key Findings
+### Key Findings
+*TODO: structure ?*
+
+1. Universality of the effect: nine distinct communities show evidence of Granger causality, including those covering news, politics, gaming, and entertainment.
+2. Specific temporal dynamics:   
+    - News communities: immediate but short responses (1-2 lags)   
+    - Engaged communities: delayed but prolonged responses (2-5 lags)  
+    - `subredditdrama`: an exception with immediate and prolonged responses
+
+3. Persistence of effects: the majority of communities show significant effects even 4-5 hours after the initial attack
+
+4. Consistency across communities: despite thematic differences, the pattern of negative responses to attacks appears to be a cross-cutting phenomenon
 
 
 ## Implications
+*TODO: structure ?*
+
+These results suggest that online attacks systematically create cycles of negativity that spread across different types of communities. The effects often persist for 4-5 hours, indicating that digital conflicts can have a substantial "half-life," influencing the tone of discussions long after the initial incident. Variation in temporal patterns suggests that different communities develop distinct "conflict rhythms," which may be related to their culture, size, or main theme.
 
 
 # Community Clusters: How do the linguistic profiles of online community clusters relate to and predict the propagation of conflict between communities?

@@ -1,0 +1,261 @@
+<div class="category-selector">
+  <button class="category-btn active" onclick="showCategory('communities')">🏛️ Communities</button>
+  <button class="category-btn" onclick="showCategory('timing')">⏱️ Timing Patterns</button>
+</div>
+
+<div id="communities" class="category-view active">
+  <div class="community-type-selector">
+    <button class="type-btn active" onclick="showCommunityType('news')">📰 News & Politics</button>
+    <button class="type-btn" onclick="showCommunityType('entertainment')">🎭 Entertainment</button>
+    <button class="type-btn" onclick="showCommunityType('diverse')">📱 Diverse</button>
+  </div>
+
+  <div id="news" class="community-type active">
+    <div class="community-card">
+      <h4>🌍 <code>worldnews</code></h4>
+      <div class="effect-badges">
+        <span class="badge immediate">Lag 1-2</span>
+      </div>
+      <p><strong>Immediate response</strong> that persists for 2 hours</p>
+    </div>
+
+    <div class="community-card">
+      <h4>📰 <code>news</code></h4>
+      <div class="effect-badges">
+        <span class="badge immediate">Lag 1-2</span>
+      </div>
+      <p><strong>Similar to worldnews</strong> - consistent news community pattern</p>
+    </div>
+
+    <div class="community-card">
+      <h4>🗳️ <code>politics</code></h4>
+      <div class="effect-badges">
+        <span class="badge immediate">Lag 1-2</span>
+      </div>
+      <p><strong>Political communities</strong> show immediate sensitivity to attacks</p>
+    </div>
+  </div>
+
+  <div id="entertainment" class="community-type">
+    <div class="community-card">
+      <h4>🎪 <code>subredditdrama</code></h4>
+      <div class="effect-badges">
+        <span class="badge persistent">Lag 1-5</span>
+      </div>
+      <p><strong>Most robust effect</strong> - significant at all hourly lags</p>
+    </div>
+
+    <div class="community-card">
+      <h4>🇺🇸 <code>the_donald</code></h4>
+      <div class="effect-badges">
+        <span class="badge delayed">Lag 2-5</span>
+      </div>
+      <p><strong>Delayed response</strong> with long-term effects</p>
+    </div>
+
+    <div class="community-card">
+      <h4>🎮 <code>gaming</code></h4>
+      <div class="effect-badges">
+        <span class="badge delayed">Lag 2-5</span>
+      </div>
+      <p><strong>Delayed but prolonged</strong> negativity</p>
+    </div>
+  </div>
+
+  <div id="diverse" class="community-type">
+    <div class="community-card">
+      <h4>🤔 <code>wtf</code></h4>
+      <div class="effect-badges">
+        <span class="badge unique">Lag 2</span>
+      </div>
+      <p><strong>Specific 2-hour delay</strong> in negative response</p>
+    </div>
+
+    <div class="community-card">
+      <h4>📝 <code>tifu</code></h4>
+      <div class="effect-badges">
+        <span class="badge delayed">Lag 2-5</span>
+      </div>
+      <p><strong>Delayed effects</strong> similar to political communities</p>
+    </div>
+
+    <div class="community-card">
+      <h4>🕹️ <code>kotakuinaction</code></h4>
+      <div class="effect-badges">
+        <span class="badge delayed">Lag 3-5</span>
+      </div>
+      <p><strong>Medium-term effects</strong> with complex dynamics</p>
+    </div>
+  </div>
+</div>
+
+<div id="timing" class="category-view">
+  <div class="timing-selector">
+    <button class="timing-btn active" onclick="showTiming('immediate')">⚡ Immediate</button>
+    <button class="timing-btn" onclick="showTiming('delayed')">⏳ Delayed</button>
+    <button class="timing-btn" onclick="showTiming('persistent')">🔄 Persistent</button>
+  </div>
+
+  <div id="immediate" class="timing-view active">
+    <h3>⚡ Immediate Effects (Lag 1)</h3>
+    <p>Communities that react within an hour of the attack</p>
+    <div class="communities-list">
+      <div class="community-item">🌍 <code>worldnews</code></div>
+      <div class="community-item">📰 <code>news</code></div>
+      <div class="community-item">🗳️ <code>politics</code></div>
+      <div class="community-item">🎪 <code>subredditdrama</code></div>
+    </div>
+    <p class="timing-insight">News and drama communities show the fastest responses</p>
+  </div>
+
+  <div id="delayed" class="timing-view">
+    <h3>⏳ Delayed Effects (Lag 2-3)</h3>
+    <p>Communities where negative responses emerge after 2-3 hours</p>
+    <div class="communities-list">
+      <div class="community-item">🇺🇸 <code>the_donald</code></div>
+      <div class="community-item">🎮 <code>gaming</code></div>
+      <div class="community-item">📝 <code>tifu</code></div>
+      <div class="community-item">🤔 <code>wtf</code></div>
+      <div class="community-item">🕹️ <code>kotakuinaction</code></div>
+    </div>
+    <p class="timing-insight">Entertainment and diverse communities show slower, more considered responses</p>
+  </div>
+
+  <div id="persistent" class="timing-view">
+    <h3>🔄 Persistent Effects (Lag 4-5)</h3>
+    <p>Cycles of negativity that persist for several hours</p>
+    <div class="communities-list">
+      <div class="community-item">🎪 <code>subredditdrama</code></div>
+      <div class="community-item">🇺🇸 <code>the_donald</code></div>
+      <div class="community-item">🎮 <code>gaming</code></div>
+      <div class="community-item">📝 <code>tifu</code></div>
+      <div class="community-item">🕹️ <code>kotakuinaction</code></div>
+      <div class="community-item">🌍 <code>worldnews</code></div>
+      <div class="community-item">📰 <code>news</code></div>
+    </div>
+    <p class="timing-insight">7 out of 9 communities show effects even 4-5 hours after attack</p>
+  </div>
+</div>
+
+<style>
+.category-selector, .community-type-selector, .timing-selector {
+  display: flex;
+  gap: 10px;
+  margin: 2rem 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-btn, .type-btn, .timing-btn {
+  padding: 12px 20px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn.active, .type-btn.active, .timing-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.category-view, .community-type, .timing-view {
+  display: none;
+}
+
+.category-view.active, .community-type.active, .timing-view.active {
+  display: block;
+}
+
+.community-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border-left: 4px solid #007bff;
+}
+
+.community-card p {
+  margin: 0.25rem 0;
+}
+
+.effect-badges {
+  display: flex;
+  gap: 8px;
+  margin: 0.5rem 0;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+}
+
+.badge.immediate { background: #28a745; }
+.badge.delayed { background: #ffc107; color: black; }
+.badge.persistent { background: #dc3545; }
+.badge.unique { background: #6f42c1; }
+
+.communities-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.community-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.timing-insight {
+  font-style: italic;
+  color: #666;
+  border-left: 3px solid #007bff;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+</style>
+
+<script>
+function showCategory(category) {
+  document.querySelectorAll('.category-view').forEach(view => {
+    view.classList.remove('active');
+  });
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  document.getElementById(category).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+function showCommunityType(type) {
+  document.querySelectorAll('.community-type').forEach(view => {
+    view.classList.remove('active');
+  });
+  document.querySelectorAll('.type-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  document.getElementById(type).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+function showTiming(timing) {
+  document.querySelectorAll('.timing-view').forEach(view => {
+    view.classList.remove('active');
+  });
+  document.querySelectorAll('.timing-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  document.getElementById(timing).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+</script>
