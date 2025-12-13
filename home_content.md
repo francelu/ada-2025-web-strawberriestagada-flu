@@ -153,9 +153,16 @@ The data clearly shows patterns of emotional contagion and behavioral mirroring:
 Interestingly, religious language in attacks correlates with increased social language in victim responses (r = 0.017). This suggests that communities may respond to religiously themed attacks by strengthening social bonds. Conversely, sadness in attacks correlates with reduced social language in targets (r = -0.016), indicating that emotionally vulnerable attacks may suppress community engagement. Although these correlations are statistically significant, the effect sizes are generally small. This suggests that, although attacker language influences victim responses, the relationship is subtle and mediated by many other factors. 
 
 ## Analysis of Response to Conflict
+*TODO: structure ?*
+
+This section examines how a subreddit under attack may respond to the attacking subreddit, considering the characteristics of the attacking hyperlinks' comments. The analyses performed here are similar to those performed for the general case, but are applied only to outgoing subreddit activities directed toward the attacker within a 72-hour window after the incoming conflict. 
+
+{% include_relative figs/body_title_conflict_response.html %}
+
+*TODO: analyse or explain more !!!*
 
 
-## Random Forest Analysis
+### Random Forest Analysis
 
 
 # Snowball Effect: ...
