@@ -1,0 +1,108 @@
+<div class="time-selector">
+  <button class="time-btn active" onclick="showTimeView('yearly')">📅 Yearly Trends</button>
+  <button class="time-btn" onclick="showTimeView('monthly')">📊 Monthly Rhythm</button>
+  <button class="time-btn" onclick="showTimeView('daily')">📈 Daily Pulse</button>
+</div>
+
+<div id="yearly-view" class="time-view active">
+  <h3>Long-Term Evolution</h3>
+  <p>Track conflict patterns across multiple years to identify major shifts and seasonal trends.</p>
+  <iframe 
+    src="assets/img/yearly_evolution.html"
+    width="100%" 
+    height="600"
+    frameborder="0"
+    style="border: 1px solid #ddd; border-radius: 8px;">
+  </iframe>
+</div>
+
+<div id="monthly-view" class="time-view">
+  <h3>Monthly Patterns</h3>
+  <p>Observe the rhythmic ebb and flow of conflicts throughout the year.</p>
+  <iframe 
+    src="assets/img/monthly_evolution.html"
+    width="100%" 
+    height="600"
+    frameborder="0"
+    style="border: 1px solid #ddd; border-radius: 8px;">
+  </iframe>
+</div>
+
+<div id="daily-view" class="time-view">
+  <h3>Daily Activity</h3>
+  <p>Examine the daily pulse of conflicts and identify peak activity periods.</p>
+  <iframe 
+    src="assets/img/daily_evolution.html"
+    width="100%" 
+    height="600"
+    frameborder="0"
+    style="border: 1px solid #ddd; border-radius: 8px;">
+  </iframe>
+</div>
+
+<style>
+.time-selector {
+  display: flex;
+  gap: 15px;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.time-btn {
+  padding: 12px 24px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.time-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.time-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.time-view {
+  display: none;
+}
+
+.time-view.active {
+  display: block;
+}
+
+.time-view h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.time-view p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+</style>
+
+<script>
+function showTimeView(viewType) {
+  // Hide all time views
+  document.querySelectorAll('.time-view').forEach(view => {
+    view.classList.remove('active');
+  });
+  
+  // Remove active class from all buttons
+  document.querySelectorAll('.time-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  // Show selected view and activate button
+  document.getElementById(viewType + '-view').classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+</script>

@@ -1,0 +1,92 @@
+<div class="method-selector">
+  <button class="method-btn active" onclick="showMethod('conflict')">🔍 Defining Conflict</button>
+  <button class="method-btn" onclick="showMethod('granger')">⏱️ Granger Causality</button>
+  <button class="method-btn" onclick="showMethod('pearson')">📊 Pearson Correlation</button>
+</div>
+
+<div id="conflict" class="method-explanation active">
+  <h3>🔍 How We Define Conflict</h3>
+  <p>We identify a "conflict" as a <strong>documented negative hyperlink</strong> from one subreddit to another.</p>
+  <div class="example">
+    <strong>Example:</strong> When r/communityA posts a critical link targeting r/communityB
+  </div>
+</div>
+
+<div id="granger" class="method-explanation">
+  <h3>⏱️ Granger Causality Analysis</h3>
+  <p>We perform <strong>Granger causality tests</strong> to assess whether attacks actually cause changes in target community behavior over time.</p>
+  <div class="example">
+    <strong>Question answered:</strong> "Does being attacked cause a community to become more negative, or are they just naturally negative?"
+  </div>
+</div>
+
+<div id="pearson" class="method-explanation">
+  <h3>📊 Pearson Correlation Analysis</h3>
+  <p>We use <strong>Pearson correlation</strong> to measure the strength and direction of linear relationships between attacker language and victim responses.</p>
+  <div class="example">
+    <strong>Question answered:</strong> "How strongly are specific attacker language features associated with victim community reactions?"
+  </div>
+</div>
+
+<style>
+.method-selector {
+  display: flex;
+  gap: 10px;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.method-btn {
+  padding: 12px 20px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.method-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.method-explanation {
+  display: none;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.method-explanation.active {
+  display: block;
+}
+
+.example {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+  margin: 1rem 0;
+}
+</style>
+
+<script>
+function showMethod(methodId) {
+  // Hide all explanations
+  document.querySelectorAll('.method-explanation').forEach(explanation => {
+    explanation.classList.remove('active');
+  });
+  
+  // Remove active class from all buttons
+  document.querySelectorAll('.method-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  // Show selected explanation and activate button
+  document.getElementById(methodId).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+</script>
