@@ -72,6 +72,65 @@ Our analysis reveals that several linguistic characteristics are powerful indica
 *TODO: maybe detail if it's based on the `POST_LABEL` / hyperlink ?*  
 Below is plotted the linguistic characteristics evolution for negative outgoing interactions from `the_donald`.
 
-{% include_relative figs/negative_LIWC_dashboard_the_donald.html %}
+{% include_relative figs/the_donald_negative_LIWC_dashboard.html %}
 
 Analyzing the evolution of negativity characteristics in conflictual outgoing events from the subreddit `the_donald` reveals similar trends for certain features. Indeed, two maxima can be observed during the same periods for the features `Negemo`, `Anger`, `vader_neg`, `Affect`, and less obviously for `frac_alpha` and `Swear`. These peaks occurred during weeks 2016-06 and 2017-02.
+
+
+# Words as Weapons: How Do Inter-Subreddit Conflicts Affect Victims' Linguistic Recovery?
+
+
+## Traces of Conflict: Influence of LIWC Characteristics on Post-Conflict Interaction Tones
+
+<!-- How Does the Conflict LIWC Characteristics Impact the Afterward Interaction Tones of the Targeted Subreddit? -->
+
+To study whether conflict changes the LIWC characteristics of a targeted subreddit, we computed the change in the subreddit's LIWC by comparing its mean LIWC after an incoming conflict during a 48-hour window with its mean LIWC before the conflict during a one-month window. Only situations without overlapping conflicts were chosen to study the effect of each conflict individually. Then, a t-test was applied to compare the obtained delta of LIWC to zero, and the variables most correlated with each change in LIWC were determined. 
+
+{% include_relative figs/body_title_general.html %}
+
+### `the_donald` Case
+
+{% include_relative figs/the_donald_body_title.html %}
+
+*TODO: add a transition to explain the next plots*  
+Upon examining `the_donald` subreddit more closely, we observe some changes related to incoming conflicts. These changes can be explained by the composition of the subreddit and the characteristics of the conflicts. 
+
+The table below shows the most correlated incoming features for each of the delta features. The incoming feature `frac_upper`, which corresponds to the proportion of capital letters in the incoming text, seems to be correlated with the most delta features, such as `delta_num_long_sentences` and `delta_frac_specials` (the proportion of special characters in the text). 
+
+{% include_relative figs/the_donald_correlation.html %}
+
+
+## The Rhythm of Recovery: How Communities Heal Their Linguistic Scars
+
+<!-- How long does it take for the linguistic tone of a “victim” subreddit to return to its baseline after being targeted in a conflict? -->
+
+When a community is targeted by a hostile post, its language doesn't immediately return to normal. The emotional shockwave reverberates through subsequent conversations, creating a linguistic recovery curve. This is the time it takes for a community's distinctive voice to return to its baseline after being disrupted by conflict. We used time-series analysis to track how key psychological markers in targeted subreddits evolved over 48-hour periods following an attack. The visualization below reveals the immediate impact and gradual healing process across different dimensions of language.
+
+*TODO: maybe use a log axis or sth to see better the -0.0003 and -0.0001*  
+{% include_relative figs/LIWC_delta_analysis.html %}
+
+Our analysis reveals distinct patterns in how different psychological features respond to and recover from conflict. Social language and cognitive mechanisms demonstrate the most significant reductions following attacks, decreasing by -0.0003 and -0.0001, respectively. These findings suggest that communities respond to hostility by becoming less socially engaged and reducing their analytical thinking. This behavior is also observed in positive, negative, and neutral emotion words. Negative emotions show the largest increase, with rises in swear words, anger, sadness, and anxiety vocabulary.
+
+*TODO: explain below plot*  
+{% include_relative figs/LIWC_recovery_rate.html %}
+
+### The Recovery Timeline: Fast Bounces and Lasting Scars
+
+## The Contagion of Conflict: How Attacker Language Shapes Victim Response?
+
+## Analysis of Response to Conflict
+
+## Random Forest Analysis
+
+# Snowball Effect: ...
+
+## Community Response Pattern
+
+## Key Findings
+
+## Implications
+
+# Community Clusters: How do the linguistic profiles of online community clusters relate to and predict the propagation of conflict between communities?
+
+# From Digital to Real World
+*TODO: 2016 U.S.A. presidential election*

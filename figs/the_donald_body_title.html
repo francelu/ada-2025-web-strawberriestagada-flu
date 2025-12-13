@@ -1,0 +1,120 @@
+<div class="body_class-selection">
+  <button class="time-btn active" onclick="showTimeView_donald('body_donald')">🔡 Body analysis </button>
+  <button class="time-btn" onclick="showTimeView_donald('title_donald')">🔤 Title analysis </button>
+  <!-- <button class="time-btn active" onclick="showTimeView('body_donald-view', this)">🔡 Body analysis</button>
+  <button class="time-btn" onclick="showTimeView('title_donald-view', this)">🔤 Title analysis</button> -->
+
+</div>
+
+<div id="body_donald-view" class="time-view active">
+  <h4>Analysis for cases where the hyperlinks are in the comment's body</h4>
+  <p>Change in linguisitcs patterns of the targetted subreddit after an incoming conflict.</p>
+  <iframe
+    src="../assets/img/the_donald_Delta_LIWC_Features.html"
+    width="100%" 
+    height="600"
+    frameborder="0"
+    scrolling="no"
+    style="border: 1px solid #ddd; border-radius: 8px;">
+  </iframe>
+
+  <iframe
+    src="../assets/img/the_donald_Delta_Non-LIWC_Features.html"
+    width="100%" 
+    height="600"
+    frameborder="0"
+    scrolling="no"
+    style="border: 1px solid #ddd; border-radius: 8px;">
+  </iframe>
+</div>
+
+
+
+<div id="title_donald-view" class="time-view">
+  <h4>Analysis for cases where the hyperlinks are in the comment's title</h4>
+  <p>Change in linguisitcs patterns of the targetted subreddit after an incoming conflict.</p>
+  <iframe
+      src="../assets/img/general_title_Delta_DonaldLIWC_Features.html"
+      width="100%" 
+      height="600"
+      frameborder="0"
+      scrolling="no"
+      style="border: 1px solid #ddd; border-radius: 8px;">
+  </iframe>
+
+  <iframe
+      src="../assets/img/general_title_Delta_DonaldNon-LIWC_Features.html"
+      width="100%" 
+      height="600"
+      frameborder="0"
+      scrolling="no"
+      style="border: 1px solid #ddd; border-radius: 8px;">
+  </iframe>
+</div>
+
+
+<style>
+.body_class-selection {
+  display: flex;
+  gap: 15px;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.time-btn {
+  padding: 12px 24px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.time-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.time-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.time-view {
+  display: none;
+}
+
+.time-view.active {
+  display: block;
+}
+
+.time-view h4 {
+  color: #333;
+}
+
+.time-view p {
+  color: #666;
+  margin: 0.25rem 0 0.75rem;
+}
+</style>
+
+<script>
+function showTimeView_donald(viewType, btn) {
+  // Hide all time views
+  document.querySelectorAll('.time-view').forEach(view => {
+    view.classList.remove('active');
+  });
+  
+  // Remove active class from all buttons
+  document.querySelectorAll('.time-btn').forEach(b => {
+    b.classList.remove('active');
+  });
+  
+  // Show selected view and activate button
+  document.getElementById(viewType + '-view').classList.add('active');
+  btn.classList.add('active');
+}
+
+</script>
