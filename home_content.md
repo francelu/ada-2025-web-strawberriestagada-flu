@@ -88,6 +88,7 @@ To study whether conflict changes the LIWC characteristics of a targeted subredd
 
 {% include_relative figs/body_title_general.html %}
 
+
 ### `the_donald` Case
 
 {% include_relative figs/the_donald_body_title.html %}
@@ -114,23 +115,50 @@ Our analysis reveals distinct patterns in how different psychological features r
 *TODO: explain below plot*  
 {% include_relative figs/LIWC_recovery_rate.html %}
 
+
 ### The Recovery Timeline: Fast Bounces and Lasting Scars
+
+The recovery timeline reveals even more compelling insights. While most features recover relatively quickly (within 11.8-12.4 hours), many communities never fully return to baseline within the 48-hour window for certain linguistic features. Most strikingly:
+
+*TODO: relevant to add the proportions ?*  
+- Cognitive mechanisms never recover in 37.6% of cases
+- Social language never recovers in  33.8%% of cases (4,548/14,698)  
+- Positive emotion never recovers in  27.6%% of cases (3,318/14,698)
+
+The recovery histogram below shows how long these linguistic disruptions typically persist across different psychological dimensions.
+
+{% include_relative figs/recovery_histogram.html %}
+
+Agreement, disagreement, and anxiety show the fastest recovery (11.6 hours), demonstrating resilience in these communication functions. However, the high rates of non-recovery for cognitive and social language functions suggest that attacks may cause lasting changes in how communities process information and interact socially.
+
+While the immediate emotional spike of negativity and anxiety is short-lived, the most significant impact of a hostile post is the long-term reduction in social and analytical language use. This suggests that communities may not only be "hurt" in the short term but can be fundamentally altered, becoming less cohesive and less thoughtful in their discourse long after the initial attack has passed.
+
 
 ## The Contagion of Conflict: How Attacker Language Shapes Victim Response?
 
+{% include_relative figs/attack_LIWC_correlation.html %}
+
+
 ## Analysis of Response to Conflict
+
 
 ## Random Forest Analysis
 
+
 # Snowball Effect: ...
+
 
 ## Community Response Pattern
 
+
 ## Key Findings
+
 
 ## Implications
 
+
 # Community Clusters: How do the linguistic profiles of online community clusters relate to and predict the propagation of conflict between communities?
+
 
 # From Digital to Real World
 *TODO: 2016 U.S.A. presidential election*
