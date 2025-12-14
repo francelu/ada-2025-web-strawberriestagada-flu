@@ -213,7 +213,7 @@ To simplify the analysis, only the 7 most virulent clusters are selected. Each c
 
 To analyze language patterns across clusters, LIWC features were first simplified into binary indicators showing whether a category appeared more or less than average. We then used chi-square tests to examine whether certain clusters were more likely to use specific types of language than would be expected by chance. To avoid false positives from running many tests, p-values were adjusted using false discovery rate correction.
 
-{% include_relative figs/cross_cluster_conflict.html %}
+
 
 In the heatmap, color intensity reflects the strength of association (Cramér’s V), while asterisks indicate statistical significance after correction.
 
