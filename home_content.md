@@ -112,22 +112,19 @@ When a community is targeted by a hostile post, its language doesn't immediately
 
 Our analysis reveals distinct patterns in how different psychological features respond to and recover from conflict. Social language and cognitive mechanisms demonstrate the most significant reductions following attacks, decreasing by -0.0003 and -0.0001, respectively. These findings suggest that communities respond to hostility by becoming less socially engaged and reducing their analytical thinking. This behavior is also observed in positive, negative, and neutral emotion words. Negative emotions show the largest increase, with rises in swear words, anger, sadness, and anxiety vocabulary.
 
-*TODO: explain below plot*  
-{% include_relative figs/LIWC_recovery_rate.html %}
 
 
 ### The Recovery Timeline: Fast Bounces and Lasting Scars
 
 The recovery timeline reveals even more compelling insights. While most features recover relatively quickly (within 11.8-12.4 hours), many communities never fully return to baseline within the 48-hour window for certain linguistic features. Most strikingly:
 
-*TODO: relevant to add the proportions ?*  
 - Cognitive mechanisms never recover in 37.6% of cases
-- Social language never recovers in  33.8%% of cases (4,548/14,698)  
-- Positive emotion never recovers in  27.6%% of cases (3,318/14,698)
+- Social language never recovers in  33.8%% of cases 
+- Positive emotion never recovers in  27.6%% of cases 
 
 The recovery histogram below shows how long these linguistic disruptions typically persist across different psychological dimensions.
 
-{% include_relative figs/recovery_histogram.html %}
+{% include_relative figs/Recovery_bar_plot.html %}
 
 Agreement, disagreement, and anxiety show the fastest recovery (11.6 hours), demonstrating resilience in these communication functions. However, the high rates of non-recovery for cognitive and social language functions suggest that attacks may cause lasting changes in how communities process information and interact socially.
 
@@ -169,59 +166,65 @@ We use a random forest model to determine which characteristics of incoming conf
 
 {% include_relative figs/body_title_random_forest.html %}
 
+## Snowball Effect
 
-# Snowball Effect:  How do repeated inter-subreddit conflicts shape the linguistic and emotional tone of both attackers and targets over time, and do these patterns suggest a cumulative negativity ?
+
+###  How do repeated inter-subreddit conflicts shape the linguistic and emotional tone of both attackers and targets over time, and do these patterns suggest a cumulative negativity ?
+
 
 We use Granger causality tests to determine whether being attacked (receiving negative sentiment posts) causally influences a community's subsequent negative behavior. These tests examine whether knowledge of past values in one time series (attacks received) improves the prediction of another time series (negative behavior emitted).
 
 
-## Community Response Pattern
+
+
+#### Community Response Pattern
 *TODO: structure ?*
 
-{% include_relative figs/community_response_pattern.html %}
 
 The Granger causality heatmap below shows which communities have statistically significant causal relationships between being attacked and subsequently exhibiting negative behavior. Darker colors indicate stronger effects.
 
+
 {% include_relative figs/granger_analysis.html %}
 
-Based on the heatmap, we can conclude that attacks cause negative behavior in certain communities. Among them, `subredditdram` is the most vulnerable; attacks consistently lead to negative behavior for more than five hours. `politics` is highly reactive, with immediate and sustained negative responses, while `news` has a quick reaction, but of shorter duration. The plot shows that, in general, drama and politics communities are most vulnerable to attack. 
+
+#### Results
 
 
-### Key Findings
-*TODO: structure ?*
-
-1. Universality of the effect: nine distinct communities show evidence of Granger causality, including those covering news, politics, gaming, and entertainment.
-2. Specific temporal dynamics:   
-    - News communities: immediate but short responses (1-2 lags)   
-    - Engaged communities: delayed but prolonged responses (2-5 lags)  
-    - `subredditdrama`: an exception with immediate and prolonged responses
-
-3. Persistence of effects: the majority of communities show significant effects even 4-5 hours after the initial attack
-
-4. Consistency across communities: despite thematic differences, the pattern of negative responses to attacks appears to be a cross-cutting phenomenon
+{% include_relative figs/community_response_pattern.html %}
 
 
-## Implications
-*TODO: structure ?*
+Based on the heatmap, we can conclude that attacks cause negative behavior in certain communities. Among them, `subredditdram` is the most vulnerable; attacks consistently lead to negative behavior for more than five hours. `politics` is highly reactive, with immediate and sustained negative responses, while `news` has a quick reaction, but of shorter duration. The plot shows that, in general, drama and politics communities are most vulnerable to attack. This the majority of communities show significant effects even 4-5 hours after the initial attack. Despite thematic differences, the pattern of negative responses to attacks appears to be a cross-cutting phenomenon with consistency across communities.
 
-These results suggest that online attacks systematically create cycles of negativity that spread across different types of communities. The effects often persist for 4-5 hours, indicating that digital conflicts can have a substantial "half-life," influencing the tone of discussions long after the initial incident. Variation in temporal patterns suggests that different communities develop distinct "conflict rhythms," which may be related to their culture, size, or main theme.
+
+These results suggest that online attacks systematically create cycles of negativity that spread across different types of communities. Theses effects often persist for 4-5 hours, indicating that online conflicts can have influence on the tone of discussions long after the attack.
 
 
 # Community Clusters: How do the linguistic profiles of online community clusters relate to and predict the propagation of conflict between communities?
 
-*TODO: explainations of methods*
 
-*TODO: necessary the static quiz index ??*
+*Je nommerais plutot cette partie cluster profiling car on ne prédit pas la propagation du conflict entre les communautés*
 
-{% include_relative figs/quiz_static_index.html %}
 
-*TODO: explain below figure*
+In this part, subreddits are gathered in clusters of communities, made on the positive network (affection between subreddits) using the Louvain method and one the embedding (similarity of the subreddits respect to their posting users) using a k-mean algorithm.
+
+To simplify the analysis, only the 7 most virulent clusters are selected. Each cluster is assigned to each subreddit and a theme is manually assigned to each cluster as shown on below plot.
 
 {% include_relative figs/cluster_profile.html %}
 
-*TODO: fix quiz*
+To analyze language patterns across clusters, LIWC features were first simplified into binary indicators showing whether a category appeared more or less than average. We then used chi-square tests to examine whether certain clusters were more likely to use specific types of language than would be expected by chance. To avoid false positives from running many tests, p-values were adjusted using false discovery rate correction.
 
-[Start the Cluster Quiz]({{ "assets/img/quiz_static/index.html" | relative_url }}){: .btn .btn-primary }
+{% include_relative figs/cross_cluster_conflict.html %}
+
+In the heatmap, color intensity reflects the strength of association (Cramér’s V), while asterisks indicate statistical significance after correction.
+
+The results reveal clear linguistic personalities:
+- `Complain About Reddit` is strongly linked to anxious, social, religious, and family-related language.
+- `General Knowledge` unexpectedly leans into family and existential themes.
+- `Conspiracy` favors leisure-related language-
+- `Politics` stands out for its heavier use of swear words.
+
+Together, these patterns show that different clusters don’t just talk about different things, they also talk about them very differently.
+
 
 
 # From Digital to Real World
