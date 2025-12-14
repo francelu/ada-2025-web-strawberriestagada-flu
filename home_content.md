@@ -208,9 +208,6 @@ To analyze language patterns across clusters, LIWC features were first simplifie
 In the heatmap, color intensity reflects the strength of association (Cramér’s V), while asterisks indicate statistical significance after correction.
 
 
-{% include_relative figs/cross_cluster_conflict.html %}
-
-
 The results reveal clear linguistic personalities:
 - `Complain About Reddit` is strongly linked to anxious, social, religious, and family-related language.
 - `General Knowledge` unexpectedly leans into family and existential themes.
