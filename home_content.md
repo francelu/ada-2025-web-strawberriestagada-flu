@@ -110,6 +110,7 @@ When a community is targeted by a hostile post, its language doesn't immediately
 *TODO: maybe use a log axis or sth to see better the -0.0003 and -0.0001*  
 new graph Recovery_bar_plot.html mais fait beuguer quand j'essaie
 
+{% include_relative figs/Recovery_bar_plot.html %}
 
 Our analysis reveals distinct patterns in how different psychological features respond to and recover from conflict. Social language and cognitive mechanisms demonstrate the most significant reductions following attacks, decreasing by -0.0003 and -0.0001, respectively. These findings suggest that communities respond to hostility by becoming less socially engaged and reducing their analytical thinking. This behavior is also observed in positive, negative, and neutral emotion words. Negative emotions show the largest increase, with rises in swear words, anger, sadness, and anxiety vocabulary.
 
@@ -220,13 +221,13 @@ j'arrive pas à rajouter: cross_cluster_conflict.html
 
 The results reveal distinct linguistic profiles across clusters:
 
-- Cluster 77 (Relationships) is strongly associated with emotional and psychological language, including anxiety, sadness, anger, and overall negative emotion, alongside elevated cognitive mechanism terms. This suggests relationship-focused discussions are emotionally charged and introspective.
+- `Cluster Relationships` is strongly associated with emotional and psychological language, including anxiety, sadness, anger, and overall negative emotion, alongside elevated cognitive mechanism terms. This suggests relationship-focused discussions are emotionally charged and introspective.
 
-- Cluster 4493 (Complain About Reddit) shows a strong association with affective language, reflecting emotionally expressive and evaluative discourse centered on platform-related frustrations.
+- `Cluster Complain About Reddit` shows a strong association with affective language, reflecting emotionally expressive and evaluative discourse centered on platform-related frustrations.
 
-- Cluster 137 (Cryptomania) is uniquely characterized by a heightened use of money-related language, consistent with a strong financial and investment-oriented focus.
+- `Cluster Cryptomania` is uniquely characterized by a heightened use of money-related language, consistent with a strong financial and investment-oriented focus.
 
-- Cluster 2267 (Drama) is linked to both affective and sexual language, indicating emotionally intense and interpersonal narratives with sensational or provocative elements.
+- `Cluster Drama` is linked to both affective and sexual language, indicating emotionally intense and interpersonal narratives with sensational or provocative elements.
 
 Together, these findings demonstrate that clusters differ not only in what topics they discuss, but also in how they express them linguistically, with each cluster exhibiting a distinct emotional and cognitive signature.
 
