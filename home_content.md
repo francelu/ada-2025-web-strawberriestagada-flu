@@ -109,6 +109,7 @@ When a community is targeted by a hostile post, its language doesn't immediately
 
 *TODO: maybe use a log axis or sth to see better the -0.0003 and -0.0001*  
 new graph Recovery_bar_plot.html mais fait beuguer quand j'essaie
+{% include_relative figs/Recovery_bar_plot.html %}
 
 Our analysis reveals distinct patterns in how different psychological features respond to and recover from conflict. Social language and cognitive mechanisms demonstrate the most significant reductions following attacks, decreasing by -0.0003 and -0.0001, respectively. These findings suggest that communities respond to hostility by becoming less socially engaged and reducing their analytical thinking. This behavior is also observed in positive, negative, and neutral emotion words. Negative emotions show the largest increase, with rises in swear words, anger, sadness, and anxiety vocabulary.
 
@@ -215,7 +216,7 @@ To analyze language patterns across clusters, LIWC features were first simplifie
 
 In the heatmap, color intensity reflects the strength of association (Cramér’s V), while asterisks denote statistical significance after multiple-comparison correction.
 
-{% include_relative figs/cross_cluster_conflict.html %}
+j'arrive pas à rajouter: cross_cluster_conflict.html
 
 The results reveal distinct linguistic profiles across clusters:
 
