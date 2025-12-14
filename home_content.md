@@ -213,17 +213,21 @@ To simplify the analysis, only the 7 most virulent clusters are selected. Each c
 
 To analyze language patterns across clusters, LIWC features were first simplified into binary indicators showing whether a category appeared more or less than average. We then used chi-square tests to examine whether certain clusters were more likely to use specific types of language than would be expected by chance. To avoid false positives from running many tests, p-values were adjusted using false discovery rate correction.
 
+In the heatmap, color intensity reflects the strength of association (Cramér’s V), while asterisks denote statistical significance after multiple-comparison correction.
 
+{% include_relative figs/cross_cluster_conflict.html %}
 
-In the heatmap, color intensity reflects the strength of association (Cramér’s V), while asterisks indicate statistical significance after correction.
+The results reveal distinct linguistic profiles across clusters:
 
-The results reveal clear linguistic personalities:
-- `Complain About Reddit` is strongly linked to anxious, social, religious, and family-related language.
-- `General Knowledge` unexpectedly leans into family and existential themes.
-- `Conspiracy` favors leisure-related language-
-- `Politics` stands out for its heavier use of swear words.
+- Cluster 77 (Relationships) is strongly associated with emotional and psychological language, including anxiety, sadness, anger, and overall negative emotion, alongside elevated cognitive mechanism terms. This suggests relationship-focused discussions are emotionally charged and introspective.
 
-Together, these patterns show that different clusters don’t just talk about different things, they also talk about them very differently.
+- Cluster 4493 (Complain About Reddit) shows a strong association with affective language, reflecting emotionally expressive and evaluative discourse centered on platform-related frustrations.
+
+- Cluster 137 (Cryptomania) is uniquely characterized by a heightened use of money-related language, consistent with a strong financial and investment-oriented focus.
+
+- Cluster 2267 (Drama) is linked to both affective and sexual language, indicating emotionally intense and interpersonal narratives with sensational or provocative elements.
+
+Together, these findings demonstrate that clusters differ not only in what topics they discuss, but also in how they express them linguistically, with each cluster exhibiting a distinct emotional and cognitive signature.
 
 
 
