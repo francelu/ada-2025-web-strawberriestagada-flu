@@ -10,13 +10,6 @@ In the digital realm, words spread faster than intentions. A single post can ign
 This project investigates the dynamics of conflict between communities on Reddit, considering language as a measurable indicator of social friction. We examine how verbal attacks between subreddits can function as linguistic weapons, how communities recover from them, and whether repeated exposure to conflict can create a snowball effect of negativity. By linking these digital battles to real-world political events related to the 2016 US presidential election, our aim is to reveal the profound connection between online discourse and the offline world.
 
 
-# Our Analytical Approach
-
-*TODO: Replace with actual methods used in the analysis*
-
-{% include_relative figs/analytical_approach.html %}
-
-
 # A Portrait of the Dataset
 
 The following visualisations provide an overview of the language that shapes our digital landscape.
@@ -139,17 +132,19 @@ When one community attacks another, the emotional tone of the assault itself may
 
 {% include_relative figs/attack_LIWC_correlation.html %}
 
-Our analysis reveals that profanity is the most powerful linguistic trigger in attacks, with swear words in hostile posts having the strongest influence on victim responses.
-
-{% include_relative figs/influential-attack.html %}
-
 The data clearly shows patterns of emotional contagion and behavioral mirroring:
 
 - Swear words in attacks trigger anger responses: the strongest correlation (r = 0.021) links attacker profanity to increased anger language in victim communities,
 - Victims mirror profanity: target communities significantly increase their own swear word usage when attacked with profanity (r = 0.020),
 - Sexual language escalates: attacks containing profanity also correlate with increased sexual language in responses (r = 0.019).
 
-Interestingly, religious language in attacks correlates with increased social language in victim responses (r = 0.017). This suggests that communities may respond to religiously themed attacks by strengthening social bonds. Conversely, sadness in attacks correlates with reduced social language in targets (r = -0.016), indicating that emotionally vulnerable attacks may suppress community engagement. Although these correlations are statistically significant, the effect sizes are generally small. This suggests that, although attacker language influences victim responses, the relationship is subtle and mediated by many other factors. 
+Interestingly, religious language in attacks correlates with increased social language in victim responses (r = 0.017). This suggests that communities may respond to religiously themed attacks by strengthening social bonds. Conversely, sadness in attacks correlates with reduced social language in targets (r = -0.016), indicating that emotionally vulnerable attacks may suppress community engagement.
+
+{% include_relative figs/influential-attack.html %}
+
+Our analysis reveals that swear is the most powerful linguistic trigger in attacks, with swear words in hostile posts having the strongest influence on victim responses.
+
+Although these correlations are statistically significant, the effect sizes are generally small. This suggests that, although attacker language influences victim responses, the relationship is subtle and mediated by many other factors. 
 
 ## Analysis of Response to Conflict
 *TODO: structure ?*
