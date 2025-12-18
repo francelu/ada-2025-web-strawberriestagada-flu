@@ -137,6 +137,8 @@ The recovery histogram below shows how long these linguistic disruptions typical
 
 {% include_relative figs/recovery_histogram.html %}
 
+{% include_relative figs/recovery_timeline_pic.html %}
+
 Agreement, disagreement, and anxiety show the fastest recovery (11.6 hours), demonstrating resilience in these communication functions. However, the high rates of non-recovery for cognitive and social language functions suggest that attacks may cause lasting changes in how communities process information and interact socially.
 
 While the immediate emotional spike of negativity and anxiety is short-lived, the most significant impact of a hostile post is the long-term reduction in social and analytical language use. This suggests that communities may not only be "hurt" in the short term but can be fundamentally altered, becoming less cohesive and less thoughtful in their discourse long after the initial attack has passed.
