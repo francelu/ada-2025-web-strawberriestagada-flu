@@ -109,7 +109,12 @@ The table below shows the most correlated incoming features for each of the delt
 
 <!-- How long does it take for the linguistic tone of a “victim” subreddit to return to its baseline after being targeted in a conflict? -->
 
+{% include_relative figs/rhythm_of_recovery_pic.html %}
+
 When a community is targeted by a hostile post, its language doesn't immediately return to normal. The emotional shockwave reverberates through subsequent conversations, creating a linguistic recovery curve. This is the time it takes for a community's distinctive voice to return to its baseline after being disrupted by conflict. We used time-series analysis to track how key psychological markers in targeted subreddits evolved over 48-hour periods following an attack. The visualization below reveals the immediate impact and gradual healing process across different dimensions of language.
+
+<!-- To have graph below picture too -->
+<div style="clear: both;"></div>
 
 *TODO: maybe use a log axis or sth to see better the -0.0003 and -0.0001*  
 *TODO: (huh - France) new graph Recovery_bar_plot.html mais fait beuguer quand j'essaie*
