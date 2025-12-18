@@ -1131,9 +1131,10 @@ pre {
 }
 
 /* --- strawberriestagada: Full width containers --- */
-.container,
+/* .container,
 .container-lg,
 .container-md,
-.container-sm {
-  max-width: 100% !important;
+.container-sm { */
+.container-md {
+  max-width: 90% !important;
 }

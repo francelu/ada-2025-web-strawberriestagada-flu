@@ -15,7 +15,7 @@ This project investigates the dynamics of conflict between communities on Reddit
 The following visualisations provide an overview of the language that shapes our digital landscape.
 
 
-## Sunburst Plots
+## Sunburst Plot
 
 The sunburnst plot below reveals the most prevalent psychological and linguistic features across the entire network, offering insight into the shared emotional vocabulary of Reddit users.
 
