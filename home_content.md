@@ -186,13 +186,8 @@ This section examines how a subreddit under attack may respond to the attacking 
 
 ## Random Forest Analysis
 
-{% include_relative figs/random_forest_pic.html %}
-
 *TODO: write more, analyse too*  
 We use a random forest model to determine which characteristics of incoming conflicts best explain differences in targeted subreddits' linguistic responses.
-
-<!-- To have graph below picture too -->
-<div style="clear: both;"></div>
 
 {% include_relative figs/body_title_random_forest.html %}
 
@@ -232,19 +227,21 @@ These results suggest that online attacks systematically create cycles of negati
 <div style="clear: both;"></div>
 
 
-# Community Clusters: How do the linguistic profiles of online community clusters relate to and predict the propagation of conflict between communities?
+# Cluster Profiling
 
-*TODO: Je nommerais plutot cette partie cluster profiling car on ne prédit pas la propagation du conflict entre les communautés*
+{% include_relative figs/cluster_profiling_pic.html %}
 
-In this part, subreddits are gathered in clusters of communities, made on the positive network (affection between subreddits) using the Louvain method and one the embedding (similarity of the subreddits respect to their posting users) using a k-mean algorithm.
+*TODO: check new research questions below, redefin, synchronise with project readme*  
+Online communities often form clusters based on shared common interests, behaviors, or emotional dynamics. These clusters can exhibit distinctive patterns in how their members use language, reflecting differences in emotional, cognitive, and social expression. How do clusters of online communities differ in their linguistic profiles? To what extent can these differences be characterized systematically using psychological and emotional language features?
 
-To simplify the analysis, only the 7 most virulent clusters are selected. Each cluster is assigned to each subreddit and a theme is manually assigned to each cluster as shown on below plot.
+In this part, subreddits are gathered in clusters of communities, made on the positive network (affection between subreddits) using the Louvain method and one the embedding (similarity of the subreddits respect to their posting users) using a k-mean algorithm. To simplify the analysis, only the 7 most virulent clusters are selected. Each cluster is assigned to each subreddit and a theme is manually assigned to each cluster as shown on below plot.
+
+<!-- To have graph below picture too -->
+<div style="clear: both;"></div>
 
 {% include_relative figs/cluster_profile.html %}
 
-To analyze language patterns across clusters, LIWC features were first simplified into binary indicators showing whether a category appeared more or less than average. We then used chi-square tests to examine whether certain clusters were more likely to use specific types of language than would be expected by chance. To avoid false positives from running many tests, p-values were adjusted using false discovery rate correction.
-
-In the heatmap, color intensity reflects the strength of association (Cramér’s V), while asterisks denote statistical significance after multiple-comparison correction.
+To analyze language patterns across clusters, LIWC features were first simplified into binary indicators showing whether a category appeared more or less than average. We then used chi-square tests to examine whether certain clusters were more likely to use specific types of language than would be expected by chance. To avoid false positives from running many tests, p-values were adjusted using false discovery rate correction. In the heatmap below, color intensity reflects the strength of association (Cramér’s V), while asterisks denote statistical significance after multiple-comparison correction.
 
 {% include_relative figs/cross_cluster_conflict.html %}
 

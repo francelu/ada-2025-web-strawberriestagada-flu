@@ -1,8 +1,23 @@
-<iframe 
-    src="{{ 'assets/img/cross_cluster_conflict.html' | relative_url }}"
-    width="900" 
-    height="1100"
-    frameborder="0"
-    scrolling="no"
-    style="border: 1px solid #ddd; border-radius: 8px;">
-</iframe>
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+    <iframe 
+        id="cross-cluster-conflict-iframe"
+        src="{{ 'assets/img/cross_cluster_conflict.html' | relative_url }}"
+        width="800" 
+        height=auto
+        frameborder="0"
+        scrolling="no"
+        style="border: 1px solid #ddd; border-radius: 8px;">
+    </iframe>
+</div>
+
+<script>
+function resizeIframe() {
+  const iframe = document.getElementById('cross-cluster-conflict-iframe');
+  iframe.onload = () => {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  };
+}
+
+// Call the function
+resizeIframe();
+</script>
