@@ -1,14 +1,14 @@
 <div class="time-selector">
-  <button class="time-btn active" onclick="showTimeView('yearly')">📅 Yearly Trends</button>
-  <button class="time-btn" onclick="showTimeView('monthly')">📊 Monthly Rhythm</button>
-  <button class="time-btn" onclick="showTimeView('daily')">📈 Daily Pulse</button>
+  <button class="time-btn active" onclick="showTimeView('yearly', event)">📅 Yearly Trends</button>
+  <button class="time-btn" onclick="showTimeView('monthly', event)">📊 Monthly Rhythm</button>
+  <button class="time-btn" onclick="showTimeView('daily', event)">📈 Daily Pulse</button>
 </div>
 
 <div id="yearly-view" class="time-view active">
   <h3>Long-Term Evolution</h3>
   <p>Track conflict patterns across multiple years to identify major shifts and seasonal trends.</p>
   <iframe 
-    src="{{ 'assets/img/yearly_evolution.html' | relative_url }}"
+    data-src="{{ 'assets/img/yearly_evolution.html' | relative_url }}"
     width="750" 
     height="750"
     frameborder="0"
@@ -20,7 +20,7 @@
   <h3>Monthly Patterns</h3>
   <p>Observe the rhythmic ebb and flow of conflicts throughout the year.</p>
   <iframe 
-    src="{{ 'assets/img/monthly_evolution.html' | relative_url }}"
+    data-src="{{ 'assets/img/monthly_evolution.html' | relative_url }}"
     width="800" 
     height="750"
     frameborder="0"
@@ -32,7 +32,7 @@
   <h3>Daily Activity</h3>
   <p>Examine the daily pulse of conflicts and identify peak activity periods.</p>
   <iframe 
-    src="{{ 'assets/img/daily_evolution.html' | relative_url }}"
+    data-src="{{ 'assets/img/daily_evolution.html' | relative_url }}"
     width="800" 
     height="750"
     frameborder="0"
@@ -69,37 +69,21 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* .time-view {
-  display: none;
-}
-
-.time-view.active {
-  display: block;
-} */
-
 .time-view {
   display: none;
-  
-  /* new additions */
-  display: flex;           /* make it a flex container */
-  flex-direction: column;  /* stack content vertically (h3, p, iframe) */
-  align-items: center;     /* center items horizontally */
-  text-align: center;      /* center text inside h3 and p */
-  gap: 1rem;               /* optional spacing between heading, paragraph, and iframe */
-}
-
-.time-view.active {
-  display: flex;           /* same flex for active view */
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 1rem;
 }
 
-/* .time-view iframe {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-} */
+.time-view.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
 
 .time-view h3 {
   color: #333;
@@ -114,19 +98,28 @@
 </style>
 
 <script>
-function showTimeView(viewType) {
-  // Hide all time views
-  document.querySelectorAll('.time-view').forEach(view => {
-    view.classList.remove('active');
-  });
-  
+function showTimeView(viewType, event) {
   // Remove active class from all buttons
-  document.querySelectorAll('.time-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  
-  // Show selected view and activate button
-  document.getElementById(viewType + '-view').classList.add('active');
+  document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
   event.currentTarget.classList.add('active');
+
+  // Hide all views
+  document.querySelectorAll('.time-view').forEach(view => view.classList.remove('active'));
+
+  // Show selected view
+  const activeView = document.getElementById(viewType + '-view');
+  activeView.classList.add('active');
+
+  // Lazy-load iframe(s) inside the active view
+  activeView.querySelectorAll('iframe').forEach(iframe => {
+    if (!iframe.src) iframe.src = iframe.dataset.src;
+  });
 }
+
+// Automatically load iframe(s) in default active tab
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.time-view.active iframe').forEach(iframe => {
+    if (!iframe.src) iframe.src = iframe.dataset.src;
+  });
+});
 </script>
