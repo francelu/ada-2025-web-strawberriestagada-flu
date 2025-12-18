@@ -1,8 +1,21 @@
 <iframe 
+    id="sunburst-iframe"
     src="assets/img/sunburst_liwc.html"
     width="100%" 
-    height="1000"
+    height=auto
     frameborder="0"
     scrolling="no"
     style="border: 1px solid #ddd; border-radius: 8px;">
 </iframe>
+
+<script>
+function resizeIframe() {
+  const iframe = document.getElementById('sunburst-iframe');
+  iframe.onload = () => {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  };
+}
+
+// Call the function
+resizeIframe();
+</script>
