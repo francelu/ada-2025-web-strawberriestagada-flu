@@ -116,7 +116,6 @@ When a community is targeted by a hostile post, its language doesn't immediately
 <!-- To have graph below picture too -->
 <div style="clear: both;"></div>
 
-*TODO: maybe use a log axis or sth to see better the -0.0003 and -0.0001*  
 *TODO: (huh - France) new graph Recovery_bar_plot.html mais fait beuguer quand j'essaie*
 
 {% include_relative figs/recovery_bar_plot.html %}
@@ -143,6 +142,9 @@ Agreement, disagreement, and anxiety show the fastest recovery (11.6 hours), dem
 
 While the immediate emotional spike of negativity and anxiety is short-lived, the most significant impact of a hostile post is the long-term reduction in social and analytical language use. This suggests that communities may not only be "hurt" in the short term but can be fundamentally altered, becoming less cohesive and less thoughtful in their discourse long after the initial attack has passed.
 
+<!-- To have text below picture too -->
+<div style="clear: both;"></div>
+
 
 ## The Contagion of Conflict: How Attacker Language Shapes Victim Response?
 
@@ -160,9 +162,13 @@ Interestingly, religious language in attacks correlates with increased social la
 
 {% include_relative figs/influential-attack.html %}
 
-Our analysis reveals that swear is the most powerful linguistic trigger in attacks, with swear words in hostile posts having the strongest influence on victim responses.
+{% include_relative figs/contagion_of_conflict_pic.html %}
 
-Although these correlations are statistically significant, the effect sizes are generally small. This suggests that, although attacker language influences victim responses, the relationship is subtle and mediated by many other factors. 
+Our analysis reveals that swear is the most powerful linguistic trigger in attacks, with swear words in hostile posts having the strongest influence on victim responses. Although these correlations are statistically significant, the effect sizes are generally small. This suggests that, although attacker language influences victim responses, the relationship is subtle and mediated by many other factors. 
+
+<!-- To have text below picture too -->
+<div style="clear: both;"></div>
+
 
 ## Analysis of Response to Conflict
 *TODO: structure ?*
