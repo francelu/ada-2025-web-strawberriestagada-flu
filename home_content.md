@@ -32,7 +32,7 @@ The word clouds below illustrate the stark contrast between positive and negativ
 
 ### Lexicon of Positivity
 
-{% include_relative figs/positive_world_count.html %}
+{% include_relative figs/lexicon_positivity.html %}
 
 
 ### Lexicon of Negativity
