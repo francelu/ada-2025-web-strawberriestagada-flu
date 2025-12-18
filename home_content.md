@@ -51,6 +51,8 @@ When does conflict flare up? The following timelines zoom from years down to day
 
 ### Identifying the Verbel Arsenal
 
+{% include_relative figs/verbal_arsenal_pic.html %}
+
 Not all negative language is created equal. Some words are more potent weapons than others. Using a Random Forest model, we analyzed through the linguistic features of hostile posts to identify the most powerful predictors of negative messages. The following chart reveals the most damaging elements in the verbal arsenal — the sharpest tools used in digital conflict.
 
 {% include_relative figs/verbal_arsenal.html %}
