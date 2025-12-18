@@ -1,36 +1,33 @@
 <div class="body_class-selection">
-  <button class="time-btn active" onclick="showTimeView_corr('body_corr')">🔡 Body analysis </button>
-  <button class="time-btn" onclick="showTimeView_corr('title_corr')">🔤 Title analysis </button>
+  <button class="time-btn active" onclick="showTimeView_corr('body_corr', event)">🔡 Body analysis </button>
+  <button class="time-btn" onclick="showTimeView_corr('title_corr', event)">🔤 Title analysis </button>
 </div>
 
 <div id="body_corr-view" class="time-view active">
   <h4>Analysis for cases where the hyperlinks are in the comment's body</h4>
   <p>Change in linguisitcs patterns of the targetted subreddit after an incoming conflict.</p>
   <iframe
-      src="{{ 'assets/img/correlations_table.html' | relative_url }}"
+      data-src="{{ 'assets/img/correlations_table.html' | relative_url }}"
       width="100%" 
-      height="600"
+      height="800"
       frameborder="0"
       scrolling="no"
       style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
 </div>
 
-
-
 <div id="title_corr-view" class="time-view">
   <h4>Analysis for cases where the hyperlinks are in the comment's title</h4>
   <p>Change in linguisitcs patterns of the targetted subreddit after an incoming conflict.</p>
   <iframe
-    src="{{ 'assets/img/correlations_table_title.html' | relative_url }}"
+    data-src="{{ 'assets/img/correlations_table_title.html' | relative_url }}"
     width="100%" 
-    height="600"
+    height="800"
     frameborder="0"
     scrolling="no"
     style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
 </div>
-
 
 <style>
 .body_class-selection {
@@ -80,19 +77,28 @@
 </style>
 
 <script>
-function showTimeView_corr(viewType) {
-  // Hide all time views
-  document.querySelectorAll('.time-view').forEach(view => {
-    view.classList.remove('active');
-  });
-  
+function showTimeView_corr(viewType, event) {
   // Remove active class from all buttons
-  document.querySelectorAll('.time-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  
-  // Show selected view and activate button
-  document.getElementById(viewType + '-view').classList.add('active');
+  document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
   event.currentTarget.classList.add('active');
+
+  // Hide all views
+  document.querySelectorAll('.time-view').forEach(view => view.classList.remove('active'));
+
+  // Show selected view
+  const activeView = document.getElementById(viewType + '-view');
+  activeView.classList.add('active');
+
+  // Lazy-load iframes: set src from data-src
+  activeView.querySelectorAll('iframe').forEach(iframe => {
+    if (!iframe.src) iframe.src = iframe.dataset.src;
+  });
 }
+
+// Automatically load iframes in the default active tab
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.time-view.active iframe').forEach(iframe => {
+    if (!iframe.src) iframe.src = iframe.dataset.src;
+  });
+});
 </script>

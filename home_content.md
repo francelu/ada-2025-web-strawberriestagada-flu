@@ -55,6 +55,9 @@ When does conflict flare up? The following timelines zoom from years down to day
 
 Not all negative language is created equal. Some words are more potent weapons than others. Using a Random Forest model, we analyzed through the linguistic features of hostile posts to identify the most powerful predictors of negative messages. The following chart reveals the most damaging elements in the verbal arsenal — the sharpest tools used in digital conflict.
 
+<!-- To have graph below picture too -->
+<div style="clear: both;"></div>
+
 {% include_relative figs/verbal_arsenal.html %}
 
 Our analysis reveals that several linguistic characteristics are powerful indicators of negative messages. `VADER Negative` emerges as the best predictor, which makes sense since it is a sentiment analysis tool designed specifically to process informal social media language. The presence of capital letters and special characters suggests an emotional message. The most predictive LIWC features are:
@@ -70,9 +73,11 @@ Below is plotted the linguistic characteristics evolution for negative outgoing 
 
 {% include_relative figs/the_donald_negative_LIWC_dashboard.html %}
 
-{% include_relative figs/swear_bubble.html %}
+{% include_relative figs/swear_bubble_pic.html %}
 
 Analyzing the evolution of negativity characteristics in conflictual outgoing events from the subreddit `the_donald` reveals similar trends for certain features. Indeed, two maxima can be observed during the same periods for the features `Negemo`, `Anger`, `vader_neg`, `Affect`, and less obviously for `frac_alpha` and `Swear`. These peaks occurred during weeks 2016-06 and 2017-02.
+
+<!-- To have title below picture too -->
 <div style="clear: both;"></div>
 
 
@@ -107,9 +112,9 @@ The table below shows the most correlated incoming features for each of the delt
 When a community is targeted by a hostile post, its language doesn't immediately return to normal. The emotional shockwave reverberates through subsequent conversations, creating a linguistic recovery curve. This is the time it takes for a community's distinctive voice to return to its baseline after being disrupted by conflict. We used time-series analysis to track how key psychological markers in targeted subreddits evolved over 48-hour periods following an attack. The visualization below reveals the immediate impact and gradual healing process across different dimensions of language.
 
 *TODO: maybe use a log axis or sth to see better the -0.0003 and -0.0001*  
-new graph Recovery_bar_plot.html mais fait beuguer quand j'essaie
+*TODO: (huh - France) new graph Recovery_bar_plot.html mais fait beuguer quand j'essaie*
 
-{% include_relative figs/Recovery_bar_plot.html %}
+{% include_relative figs/recovery_bar_plot.html %}
 
 Our analysis reveals distinct patterns in how different psychological features respond to and recover from conflict. Social language and cognitive mechanisms demonstrate the most significant reductions following attacks, decreasing by -0.0003 and -0.0001, respectively. These findings suggest that communities respond to hostility by becoming less socially engaged and reducing their analytical thinking. This behavior is also observed in positive, negative, and neutral emotion words. Negative emotions show the largest increase, with rises in swear words, anger, sadness, and anxiety vocabulary.
 

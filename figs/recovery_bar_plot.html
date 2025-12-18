@@ -1,0 +1,21 @@
+<iframe 
+    id="recovery-bar-plot-iframe"
+    src="{{ 'assets/img/Recovery_bar_plot.html' | relative_url }}"
+    width="100%" 
+    height=auto
+    frameborder="0"
+    scrolling="no"
+    style="border: 1px solid #ddd; border-radius: 8px;">
+</iframe>
+
+<script>
+function resizeIframe() {
+  const iframe = document.getElementById('recovery-bar-plot-iframe');
+  iframe.onload = () => {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  };
+}
+
+// Call the function
+resizeIframe();
+</script>
