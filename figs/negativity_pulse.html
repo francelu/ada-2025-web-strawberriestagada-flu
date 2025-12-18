@@ -9,8 +9,8 @@
   <p>Track conflict patterns across multiple years to identify major shifts and seasonal trends.</p>
   <iframe 
     src="{{ 'assets/img/yearly_evolution.html' | relative_url }}"
-    width="700" 
-    height="900"
+    width="750" 
+    height="750"
     frameborder="0"
     style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
@@ -21,8 +21,8 @@
   <p>Observe the rhythmic ebb and flow of conflicts throughout the year.</p>
   <iframe 
     src="{{ 'assets/img/monthly_evolution.html' | relative_url }}"
-    width="700" 
-    height="900"
+    width="800" 
+    height="750"
     frameborder="0"
     style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
@@ -33,8 +33,8 @@
   <p>Examine the daily pulse of conflicts and identify peak activity periods.</p>
   <iframe 
     src="{{ 'assets/img/daily_evolution.html' | relative_url }}"
-    width="700" 
-    height="900"
+    width="800" 
+    height="750"
     frameborder="0"
     style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
@@ -69,13 +69,37 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.time-view {
+/* .time-view {
   display: none;
 }
 
 .time-view.active {
   display: block;
+} */
+
+.time-view {
+  display: none;
+  
+  /* new additions */
+  display: flex;           /* make it a flex container */
+  flex-direction: column;  /* stack content vertically (h3, p, iframe) */
+  align-items: center;     /* center items horizontally */
+  text-align: center;      /* center text inside h3 and p */
+  gap: 1rem;               /* optional spacing between heading, paragraph, and iframe */
 }
+
+.time-view.active {
+  display: flex;           /* same flex for active view */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+/* .time-view iframe {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+} */
 
 .time-view h3 {
   color: #333;
