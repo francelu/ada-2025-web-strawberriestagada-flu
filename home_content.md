@@ -199,11 +199,16 @@ We use a random forest model to determine which characteristics of incoming conf
 
 # Snowball Effect
 
+{% include_relative figs/snowball_effect_pic.html %}
+
 *TODO: integrate intro text with the research questions below*
 
 How do repeated inter-subreddit conflicts shape the linguistic and emotional tone of both attackers and targets over time, and do these patterns suggest a cumulative negativity ? What are the distinctive LIWC profiles of different community clusters during periods of normal interaction?
 
 We use Granger causality tests to determine whether being attacked (receiving negative sentiment posts) causally influences a community's subsequent negative behavior. These tests examine whether knowledge of past values in one time series (attacks received) improves the prediction of another time series (negative behavior emitted).
+
+<!-- To have text below picture too -->
+<div style="clear: both;"></div>
 
 
 ## Community Response Pattern
@@ -213,13 +218,18 @@ The Granger causality heatmap below shows which communities have statistically s
 {% include_relative figs/granger_analysis.html %}
 
 
-## Results
+### Results
 
 {% include_relative figs/community_response_pattern.html %}
+
+{% include_relative figs/snowball_effect_results_pic.html %}
 
 Based on the heatmap, we can conclude that attacks cause negative behavior in certain communities. Among them, `subredditdram` is the most vulnerable; attacks consistently lead to negative behavior for more than five hours. `politics` is highly reactive, with immediate and sustained negative responses, while `news` has a quick reaction, but of shorter duration. The plot shows that, in general, drama and politics communities are most vulnerable to attack. This the majority of communities show significant effects even 4-5 hours after the initial attack. Despite thematic differences, the pattern of negative responses to attacks appears to be a cross-cutting phenomenon with consistency across communities.
 
 These results suggest that online attacks systematically create cycles of negativity that spread across different types of communities. Theses effects often persist for 4-5 hours, indicating that online conflicts can have influence on the tone of discussions long after the attack.
+
+<!-- To have text below picture too -->
+<div style="clear: both;"></div>
 
 
 # Community Clusters: How do the linguistic profiles of online community clusters relate to and predict the propagation of conflict between communities?
