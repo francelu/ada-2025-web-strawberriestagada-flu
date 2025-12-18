@@ -171,7 +171,6 @@ Our analysis reveals that swear is the most powerful linguistic trigger in attac
 
 
 ## Analysis of Response to Conflict
-*TODO: structure ?*
 
 {% include_relative figs/response_to_conflict_pic.html %}
 
@@ -187,7 +186,13 @@ This section examines how a subreddit under attack may respond to the attacking 
 
 ## Random Forest Analysis
 
+{% include_relative figs/random_forest_pic.html %}
+
+*TODO: write more, analyse too*  
 We use a random forest model to determine which characteristics of incoming conflicts best explain differences in targeted subreddits' linguistic responses.
+
+<!-- To have graph below picture too -->
+<div style="clear: both;"></div>
 
 {% include_relative figs/body_title_random_forest.html %}
 

@@ -1,36 +1,33 @@
 <div class="body_class-selection">
-  <button class="time-btn active" onclick="showTimeView_rf('body_rf')">🔡 Body analysis </button>
-  <button class="time-btn" onclick="showTimeView_rf('title_rf')">🔤 Title analysis </button>
+  <button class="time-btn active" onclick="showTimeView_rf('body_rf', this)">🔡 Body analysis</button>
+  <button class="time-btn" onclick="showTimeView_rf('title_rf', this)">🔤 Title analysis</button>
 </div>
 
 <div id="body_rf-view" class="time-view active">
   <h4>Analysis for cases where the hyperlinks are in the comment's body</h4>
-  <p>Change in linguisitcs patterns of the targetted subreddit after an incoming conflict.</p>
+  <p>Change in linguistic patterns of the targeted subreddit after an incoming conflict.</p>
   <iframe 
-      src="{{'assets/img/rf_summary_table_resp.html ' | relative_url}}"
+      data-src="{{ 'assets/img/rf_summary_table_resp.html' | relative_url }}"
       width="100%" 
-      height="600"
+      height="400"
       frameborder="0"
       scrolling="no"
       style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
 </div>
-
-
 
 <div id="title_rf-view" class="time-view">
   <h4>Analysis for cases where the hyperlinks are in the comment's title</h4>
-  <p>Change in linguisitcs patterns of the targetted subreddit after an incoming conflict.</p>
+  <p>Change in linguistic patterns of the targeted subreddit after an incoming conflict.</p>
   <iframe 
-      src="{{ 'assets/img/rf_summary_title_table_resp.html' | relative_url }}"
+      data-src="{{ 'assets/img/rf_summary_title_table_resp.html' | relative_url }}"
       width="100%" 
-      height="600"
+      height="400"
       frameborder="0"
       scrolling="no"
       style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
 </div>
-
 
 <style>
 .body_class-selection {
@@ -80,19 +77,31 @@
 </style>
 
 <script>
-function showTimeView_rf(viewType) {
-  // Hide all time views
-  document.querySelectorAll('.time-view').forEach(view => {
-    view.classList.remove('active');
+function showTimeView_rf(viewType, btn) {
+  const container = btn.closest('div').parentElement;
+
+  // Buttons
+  container.querySelectorAll('.time-btn')
+    .forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Views
+  container.querySelectorAll('.time-view')
+    .forEach(v => v.classList.remove('active'));
+
+  const activeView = container.querySelector('#' + viewType + '-view');
+  activeView.classList.add('active');
+
+  // Lazy-load iframe
+  activeView.querySelectorAll('iframe').forEach(iframe => {
+    if (!iframe.src) iframe.src = iframe.dataset.src;
   });
-  
-  // Remove active class from all buttons
-  document.querySelectorAll('.time-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  
-  // Show selected view and activate button
-  document.getElementById(viewType + '-view').classList.add('active');
-  event.currentTarget.classList.add('active');
 }
+
+// Load default active tab iframe on page load
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.time-view.active iframe').forEach(iframe => {
+    if (!iframe.src) iframe.src = iframe.dataset.src;
+  });
+});
 </script>
