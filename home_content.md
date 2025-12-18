@@ -37,7 +37,7 @@ The word clouds below illustrate the stark contrast between positive and negativ
 
 ### Lexicon of Negativity
 
-{% include_relative figs/negative_world_count.html %}
+{% include_relative figs/lexicon_negativity.html %}
 
 
 ### The Pulse of Negativity Over Time
