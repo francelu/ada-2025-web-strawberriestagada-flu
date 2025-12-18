@@ -231,3 +231,19 @@ Together, these findings demonstrate that clusters differ not only in what topic
 
 # From Digital to Real World
 *TODO: 2016 U.S.A. presidential election*
+
+{% include_relative figs/google_trends_us_presidential_election_topics_(2014-2017).html %}
+
+{% include_relative figs/google_trends_2014-2017_detected_peak_per_topic.html %}
+
+{% include_relative figs/political_activity_trends_peaks.html %}
+
+{% include_relative figs/cross_party_negativity.html %}
+
+{% include_relative figs/dem_rep_activity.html %}
+
+{% include_relative figs/cross_negativity_over_quarter.html %}
+
+{% include_relative figs/liwc_word_cloud_republican__to__democrat.html %}
+
+{% include_relative figs/liwc_word_cloud_democrat__to__republican.html %}
