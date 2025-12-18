@@ -1,54 +1,51 @@
 <div class="body_class-selection">
-  <button class="time-btn active" onclick="showTimeView_resp('body_resp')">🔡 Body analysis </button>
-  <button class="time-btn" onclick="showTimeView_resp('title_resp')">🔤 Title analysis </button>
+  <button class="time-btn active" onclick="showTimeView_resp('body_resp', event)">🔡 Body analysis </button>
+  <button class="time-btn" onclick="showTimeView_resp('title_resp', event)">🔤 Title analysis </button>
 </div>
 
 <div id="body_resp-view" class="time-view active">
   <h4>Analysis for cases where the hyperlinks are in the comment's body</h4>
   <p>Change in linguisitcs patterns of the targetted subreddit after an incoming conflict.</p>
   <iframe 
-      src="{{ 'assets/img/conflict_response_Delta_LIWC_Features.html' | relative_url }}"
+      data-src="{{ 'assets/img/conflict_response_Delta_LIWC_Features.html' | relative_url }}"
       width="100%" 
-      height="600"
+      height="575"
       frameborder="0"
       scrolling="no"
       style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
 
   <iframe 
-      src="{{ 'assets/img/conflict_response_Delta_Non-LIWC_Features.html' | relative_url }}"
+      data-src="{{ 'assets/img/conflict_response_Delta_Non-LIWC_Features.html' | relative_url }}"
       width="100%" 
-      height="600"
+      height="575"
       frameborder="0"
       scrolling="no"
       style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
 </div>
-
-
 
 <div id="title_resp-view" class="time-view">
   <h4>Analysis for cases where the hyperlinks are in the comment's title</h4>
   <p>Change in linguisitcs patterns of the targetted subreddit after an incoming conflict.</p>
   <iframe 
-      src="{{ 'assets/img/conflict_response_title_Delta_LIWC_Features.html' | relative_url }}"
+      data-src="{{ 'assets/img/conflict_response_title_Delta_LIWC_Features.html' | relative_url }}"
       width="100%" 
-      height="600"
+      height="575"
       frameborder="0"
       scrolling="no"
       style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
 
   <iframe 
-      src="{{ 'assets/img/conflict_response_title_Delta_Non-LIWC_Features.html' | relative_url }}"
+      data-src="{{ 'assets/img/conflict_response_title_Delta_Non-LIWC_Features.html' | relative_url }}"
       width="100%" 
-      height="600"
+      height="575"
       frameborder="0"
       scrolling="no"
       style="border: 1px solid #ddd; border-radius: 8px;">
   </iframe>
 </div>
-
 
 <style>
 .body_class-selection {
@@ -98,19 +95,28 @@
 </style>
 
 <script>
-function showTimeView_resp(viewType) {
-  // Hide all time views
-  document.querySelectorAll('.time-view').forEach(view => {
-    view.classList.remove('active');
-  });
-  
+function showTimeView_resp(viewType, event) {
   // Remove active class from all buttons
-  document.querySelectorAll('.time-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  
-  // Show selected view and activate button
-  document.getElementById(viewType + '-view').classList.add('active');
+  document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
   event.currentTarget.classList.add('active');
+
+  // Hide all views
+  document.querySelectorAll('.time-view').forEach(view => view.classList.remove('active'));
+
+  // Show selected view
+  const activeView = document.getElementById(viewType + '-view');
+  activeView.classList.add('active');
+
+  // Lazy-load iframes inside the active view
+  activeView.querySelectorAll('iframe').forEach(iframe => {
+    if (!iframe.src) iframe.src = iframe.dataset.src;
+  });
 }
+
+// Automatically load iframe(s) in the default active tab
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.time-view.active iframe').forEach(iframe => {
+    if (!iframe.src) iframe.src = iframe.dataset.src;
+  });
+});
 </script>

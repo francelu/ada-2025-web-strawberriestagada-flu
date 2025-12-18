@@ -148,7 +148,12 @@ While the immediate emotional spike of negativity and anxiety is short-lived, th
 
 ## The Contagion of Conflict: How Attacker Language Shapes Victim Response?
 
+{% include_relative figs/contagion_of_conflict_pic.html %}
+
 When one community attacks another, the emotional tone of the assault itself may determine how deeply the target is wounded. We investigated whether specific linguistic features in hostile posts act as psychological triggers that create predictable patterns in how victim communities respond. We used correlation analysis across multiple time segments to trace how the emotional and cognitive composition of an attack influences subsequent linguistic shifts in the targeted community. The visualization below shows which attacker features have the strongest ripple effect.
+
+<!-- To have graph below picture too -->
+<div style="clear: both;"></div>
 
 {% include_relative figs/attack_LIWC_correlation.html %}
 
@@ -162,69 +167,59 @@ Interestingly, religious language in attacks correlates with increased social la
 
 {% include_relative figs/influential-attack.html %}
 
-{% include_relative figs/contagion_of_conflict_pic.html %}
-
 Our analysis reveals that swear is the most powerful linguistic trigger in attacks, with swear words in hostile posts having the strongest influence on victim responses. Although these correlations are statistically significant, the effect sizes are generally small. This suggests that, although attacker language influences victim responses, the relationship is subtle and mediated by many other factors. 
-
-<!-- To have text below picture too -->
-<div style="clear: both;"></div>
 
 
 ## Analysis of Response to Conflict
 *TODO: structure ?*
 
+{% include_relative figs/response_to_conflict_pic.html %}
+
 This section examines how a subreddit under attack may respond to the attacking subreddit, considering the characteristics of the attacking hyperlinks' comments. The analyses performed here are similar to those performed for the general case, but are applied only to outgoing subreddit activities directed toward the attacker within a 72-hour window after the incoming conflict. 
+
+<!-- To have graph below picture too -->
+<div style="clear: both;"></div>
 
 {% include_relative figs/body_title_conflict_response.html %}
 
-*TODO: analyse or explain more !!!*
+*TODO: analyse or explain more !*
 
 
-### Random Forest Analysis
-*TODO: structure ?*
+## Random Forest Analysis
 
 We use a random forest model to determine which characteristics of incoming conflicts best explain differences in targeted subreddits' linguistic responses.
 
 {% include_relative figs/body_title_random_forest.html %}
 
-## Snowball Effect
 
+# Snowball Effect
 
-###  How do repeated inter-subreddit conflicts shape the linguistic and emotional tone of both attackers and targets over time, and do these patterns suggest a cumulative negativity ?
+*TODO: integrate intro text with the research questions below*
 
+How do repeated inter-subreddit conflicts shape the linguistic and emotional tone of both attackers and targets over time, and do these patterns suggest a cumulative negativity ? What are the distinctive LIWC profiles of different community clusters during periods of normal interaction?
 
 We use Granger causality tests to determine whether being attacked (receiving negative sentiment posts) causally influences a community's subsequent negative behavior. These tests examine whether knowledge of past values in one time series (attacks received) improves the prediction of another time series (negative behavior emitted).
 
 
-
-
-#### Community Response Pattern
-*TODO: structure ?*
-
+## Community Response Pattern
 
 The Granger causality heatmap below shows which communities have statistically significant causal relationships between being attacked and subsequently exhibiting negative behavior. Darker colors indicate stronger effects.
-
 
 {% include_relative figs/granger_analysis.html %}
 
 
-#### Results
-
+## Results
 
 {% include_relative figs/community_response_pattern.html %}
 
-
 Based on the heatmap, we can conclude that attacks cause negative behavior in certain communities. Among them, `subredditdram` is the most vulnerable; attacks consistently lead to negative behavior for more than five hours. `politics` is highly reactive, with immediate and sustained negative responses, while `news` has a quick reaction, but of shorter duration. The plot shows that, in general, drama and politics communities are most vulnerable to attack. This the majority of communities show significant effects even 4-5 hours after the initial attack. Despite thematic differences, the pattern of negative responses to attacks appears to be a cross-cutting phenomenon with consistency across communities.
-
 
 These results suggest that online attacks systematically create cycles of negativity that spread across different types of communities. Theses effects often persist for 4-5 hours, indicating that online conflicts can have influence on the tone of discussions long after the attack.
 
 
 # Community Clusters: How do the linguistic profiles of online community clusters relate to and predict the propagation of conflict between communities?
 
-
-*Je nommerais plutot cette partie cluster profiling car on ne prédit pas la propagation du conflict entre les communautés*
-
+*TODO: Je nommerais plutot cette partie cluster profiling car on ne prédit pas la propagation du conflict entre les communautés*
 
 In this part, subreddits are gathered in clusters of communities, made on the positive network (affection between subreddits) using the Louvain method and one the embedding (similarity of the subreddits respect to their posting users) using a k-mean algorithm.
 
@@ -235,7 +230,6 @@ To simplify the analysis, only the 7 most virulent clusters are selected. Each c
 To analyze language patterns across clusters, LIWC features were first simplified into binary indicators showing whether a category appeared more or less than average. We then used chi-square tests to examine whether certain clusters were more likely to use specific types of language than would be expected by chance. To avoid false positives from running many tests, p-values were adjusted using false discovery rate correction.
 
 In the heatmap, color intensity reflects the strength of association (Cramér’s V), while asterisks denote statistical significance after multiple-comparison correction.
-
 
 {% include_relative figs/cross_cluster_conflict.html %}
 
@@ -250,7 +244,6 @@ The results reveal distinct linguistic profiles across clusters:
 - `Cluster Drama` is linked to both affective and sexual language, indicating emotionally intense and interpersonal narratives with sensational or provocative elements.
 
 Together, these findings demonstrate that clusters differ not only in what topics they discuss, but also in how they express them linguistically, with each cluster exhibiting a distinct emotional and cognitive signature.
-
 
 
 # From Digital to Real World
