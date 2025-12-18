@@ -70,7 +70,10 @@ Below is plotted the linguistic characteristics evolution for negative outgoing 
 
 {% include_relative figs/the_donald_negative_LIWC_dashboard.html %}
 
+{% include_relative figs/swear_bubble.html %}
+
 Analyzing the evolution of negativity characteristics in conflictual outgoing events from the subreddit `the_donald` reveals similar trends for certain features. Indeed, two maxima can be observed during the same periods for the features `Negemo`, `Anger`, `vader_neg`, `Affect`, and less obviously for `frac_alpha` and `Swear`. These peaks occurred during weeks 2016-06 and 2017-02.
+<div style="clear: both;"></div>
 
 
 # Words as Weapons: How Do Inter-Subreddit Conflicts Affect Victims' Linguistic Recovery?
