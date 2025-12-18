@@ -26,8 +26,7 @@ The sunburnst plot below reveals the most prevalent psychological and linguistic
 
 ## Tracing the Contours of Conflicts
 
-*TODO: rephrase "with our map and microscope in hand"*  
-With our map and microscope in hand, we can now trace the flow of negativity itself. How does hostility manifest itself? How does it spread through the network over time?
+Now that we know what our data contains, we can trace the flow of negativity. How does hostility manifest itself? How does it spread through the network over time?
 
 The word clouds below illustrate the stark contrast between positive and negative interactions. One is a landscape of cohesion and reward. The other is a storm of anger and negation. This dichotomy is the fundamental emotional dynamic of inter-community conflict.
 
