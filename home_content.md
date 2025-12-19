@@ -88,17 +88,24 @@ Analyzing the evolution of negativity characteristics in conflictual outgoing ev
 
 <!-- How Does the Conflict LIWC Characteristics Impact the Afterward Interaction Tones of the Targeted Subreddit? -->
 
-To study whether conflict changes the LIWC characteristics of a targeted subreddit, we computed the change in the subreddit's LIWC by comparing its mean LIWC after an incoming conflict during a 48-hour window with its mean LIWC before the conflict during a one-month window. Only situations without overlapping conflicts were chosen to study the effect of each conflict individually. Then, a t-test was applied to compare the obtained delta of LIWC to zero, and the variables most correlated with each change in LIWC were determined. 
+<!-- Text reviewed -->
+To study the effect of conflict on the LIWC characteristics of a targeted subreddit, we computed the change in the subreddit's LIWC by comparing its mean LIWC after an incoming conflict during a 48-hour window with its mean LIWC before the conflict during a one-month window. Only situations without overlapping conflicts were chosen in order to study the effect of each conflict individually. Then, we applied a t-test to compare the obtained delta of LIWC to zero and determined the variables most correlated with each change in LIWC. We conducted the analysis in both the hyperlinks in the titles and the hyperlinks in the body because we assumed that the underlying mechanism of their use differed in the two cases.
 
 
-#### Analysis on the body of the posts
+### General Conflict Analysis
+
+<!-- Text reviewed -->
+When analyzing the bodies of the posts, the conflicts significantly altered the targeted subreddit's `LIWC AuxVb` and `Time` by increasing their utilization while decreasing the proportion of `LIWC Home`. No significant changes were observed for the non-LIWC features. Therefore, it is difficult to draw conclusions about these influences. When analyzing the titles of the posts, only the `LIWC Inhib` increased significantly, and no changes were observed for the non-LIWC features.
+
+
+#### Analysis on the Body of the Posts
 
 {% include_relative figs/body_general_LIWC.html %}
 
 {% include_relative figs/body_general_nonLIWC.html %}
 
 
-#### Analysis on the title of the posts
+#### Analysis on the Title of the Posts
 
 {% include_relative figs/title_general_LIWC.html %}
 
@@ -107,32 +114,36 @@ To study whether conflict changes the LIWC characteristics of a targeted subredd
 
 ### `the_donald` Case
 
+<!-- Text reviewed -->
+To delve deeper into the analysis of the real world, individual analyses were also carried out. Here is an example using the targeted subreddit, `the_donald`. When analyzing the LIWC features of the posts' bodies, `LIWC Function`, `Adverbs`, and `Negation` increased significantly, while `Social` and `Body` decreased. No significant changes were observed for the non-LIWC features. When analyzing the LIWC features of the post titles, the `Excl`, `Money`, and `Assent` features decreased. Upon examining `the_donald` subreddit more closely, we observe some changes related to incoming conflicts. These changes can be explained by the composition of the subreddit and the characteristics of the conflicts. 
 
-#### Analysis on the body of the posts
+
+#### Analysis on the Body of the Posts
 
 {% include_relative figs/body_donald_LIWC.html %}
 
 {% include_relative figs/body_donald_nonLIWC.html %}
 
 
-#### Analysis on the title of the posts
+#### Analysis on the Title of the Posts
 
 {% include_relative figs/title_donald_LIWC.html %}
 
 {% include_relative figs/title_donald_nonLIWC.html %}
 
-*TODO: add a transition to explain the next plots*  
-Upon examining `the_donald` subreddit more closely, we observe some changes related to incoming conflicts. These changes can be explained by the composition of the subreddit and the characteristics of the conflicts. 
 
-The table below shows the most correlated incoming features for each of the delta features. The incoming feature `frac_upper`, which corresponds to the proportion of capital letters in the incoming text, seems to be correlated with the most delta features, such as `delta_num_long_sentences` and `delta_frac_specials` (the proportion of special characters in the text). 
+### Correlated Incoming Linguistic Features
+
+<!-- Text reviewed -->
+The tables below show the most correlated incoming features for each of the delta features. The incoming feature `frac_upper`, which corresponds to the proportion of capital letters in the incoming text, seems to be correlated with the most delta features, such as `delta_num_long_sentences` and `delta_frac_specials` (the proportion of special characters in the text). 
 
 
-#### Analysis on the body of the posts
+#### Analysis on the Body of the Posts
 
 {% include_relative figs/body_donald_corr.html %}
 
 
-#### Analysis on the title of the posts
+#### Analysis on the Title of the Posts
 
 {% include_relative figs/title_donald_corr.html %}
 
@@ -204,39 +215,42 @@ Our analysis reveals that swear is the most powerful linguistic trigger in attac
 
 {% include_relative figs/response_to_conflict_pic.html %}
 
-This section examines how a subreddit under attack may respond to the attacking subreddit, considering the characteristics of the attacking hyperlinks' comments. The analyses performed here are similar to those performed for the general case, but are applied only to outgoing subreddit activities directed toward the attacker within a 72-hour window after the incoming conflict. 
+<!-- Text reviewed -->
+This section examines how a subreddit under attack may respond to the attacking subreddit, considering the characteristics of the attacking hyperlinks' comments. The analyses performed here are similar to those performed for the general case, but are applied only to outgoing activities of the subreddit directed toward the attacker within 72 hours after the incoming conflict begins. 
+
+<!-- Text reviewed -->
+As in the conflict analysis, the plots below illustrate the changes in linguistic features of outgoing interactions from the targeted subreddit towards the source of the conflict. The significant increase in non-LIWC characteristics indicates longer texts containing more words, sentences, and special characters. Thus, the targeted subreddit responds to the source of the conflict with more intense comments than it does to a random hyperlink mention.
 
 <!-- To have graph below picture too -->
 <div style="clear: both;"></div>
 
 
-#### Analysis on the body of the posts
+#### Analysis on the Body of the Posts
 
 {% include_relative figs/body_conflict_response_LIWC.html %}
 
 {% include_relative figs/body_conflict_response_nonLIWC.html %}
 
 
-#### Analysis on the title of the posts
+#### Analysis on the Title of the Posts
 
 {% include_relative figs/title_conflict_response_LIWC.html %}
 
 {% include_relative figs/title_conflict_response_nonLIWC.html %}
 
-*TODO: analyse or explain more !*
-
 
 ## Random Forest Analysis
 
-*TODO: write more, analyse too*  
-We use a random forest model to determine which characteristics of incoming conflicts best explain differences in targeted subreddits' linguistic responses.
+<!-- Text reviewed -->
+We used a Random Forest model to determine which characteristics of incoming conflicts best explain differences in the linguistic responses of targeted subreddits. The tables below summarize the results obtained from this method. Due to the difficulty of fitting the data, not all linguistic feature deltas could be predicted. While it is difficult to draw conclusions from the results, the influence of certain conflict features is intriguing. For example, in the title analysis, the delta of the `LIWC Negate` feature was influenced by LIWC features such as `Dissent` or `frac_upper`, which could be considered aggressive.
 
-#### Analysis on the body of the posts
+
+#### Analysis on the Body of the Posts
 
 {% include_relative figs/body_random_forest.html %}
 
 
-#### Analysis on the title of the posts
+#### Analysis on the Title of the Posts
 
 {% include_relative figs/title_random_forest.html %}
 
