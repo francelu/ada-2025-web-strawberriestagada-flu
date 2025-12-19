@@ -93,22 +93,14 @@ To study whether conflict changes the LIWC characteristics of a targeted subredd
 
 #### Analysis on the body of the posts
 
-TODO: explain plot
-
 {% include_relative figs/body_general_LIWC.html %}
-
-TODO: explain plot
 
 {% include_relative figs/body_general_nonLIWC.html %}
 
 
 #### Analysis on the title of the posts
 
-TODO: explain plot
-
 {% include_relative figs/title_general_LIWC.html %}
-
-TODO: explain plot
 
 {% include_relative figs/title_general_nonLIWC.html %}
 
@@ -118,22 +110,14 @@ TODO: explain plot
 
 #### Analysis on the body of the posts
 
-TODO: explain plot
-
 {% include_relative figs/body_donald_LIWC.html %}
-
-TODO: explain plot
 
 {% include_relative figs/body_donald_nonLIWC.html %}
 
 
 #### Analysis on the title of the posts
 
-TODO: explain plot
-
 {% include_relative figs/title_donald_LIWC.html %}
-
-TODO: explain plot
 
 {% include_relative figs/title_donald_nonLIWC.html %}
 
@@ -145,14 +129,10 @@ The table below shows the most correlated incoming features for each of the delt
 
 #### Analysis on the body of the posts
 
-TODO: explain plot
-
 {% include_relative figs/body_donald_corr.html %}
 
 
 #### Analysis on the title of the posts
-
-TODO: explain plot
 
 {% include_relative figs/title_donald_corr.html %}
 
@@ -232,22 +212,14 @@ This section examines how a subreddit under attack may respond to the attacking 
 
 #### Analysis on the body of the posts
 
-TODO: explain plot
-
 {% include_relative figs/body_conflict_response_LIWC.html %}
-
-TODO: explain plot
 
 {% include_relative figs/body_conflict_response_nonLIWC.html %}
 
 
 #### Analysis on the title of the posts
 
-TODO: explain plot
-
 {% include_relative figs/title_conflict_response_LIWC.html %}
-
-TODO: explain plot
 
 {% include_relative figs/title_conflict_response_nonLIWC.html %}
 
@@ -259,7 +231,14 @@ TODO: explain plot
 *TODO: write more, analyse too*  
 We use a random forest model to determine which characteristics of incoming conflicts best explain differences in targeted subreddits' linguistic responses.
 
-{% include_relative figs/body_title_random_forest.html %}
+#### Analysis on the body of the posts
+
+{% include_relative figs/body_random_forest.html %}
+
+
+#### Analysis on the title of the posts
+
+{% include_relative figs/title_random_forest.html %}
 
 
 # Snowball Effect
