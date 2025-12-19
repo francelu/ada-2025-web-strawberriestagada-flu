@@ -1,7 +1,7 @@
 <div class="plotly-grid">
   <div class="plotly-container">
     <h4>Analysis on the body of the posts</h4>
-    <p>TODO: explain plot.</p>
+    <p>TODO: replot and explain plot.</p>
     <iframe 
       src="{{ 'assets/img/the_donald_Delta_LIWC_Features.html' | relative_url }}"
       width="100%" 
@@ -9,7 +9,7 @@
       frameborder="0"
       scrolling="no">
     </iframe>
-    <p>TODO: explain plot.</p>
+    <p>TODO: replot and explain plot.</p>
     <iframe 
       src="{{ 'assets/img/the_donald_Delta_Non-LIWC_Features.html' | relative_url }}"
       width="100%" 
@@ -22,7 +22,7 @@
   
   <div class="plotly-container">
     <h4>Analysis on the title of the posts</h4>
-    <p>TODO: explain plots.</p>
+    <p>TODO: replot and explain plot.</p>
     <iframe 
       src="{{ 'assets/img/general_title_Delta_DonaldLIWC_Features.html' | relative_url }}"
       width="100%" 
@@ -30,7 +30,7 @@
       frameborder="0"
       scrolling="no">
     </iframe>
-    <p>TODO: explain plot.</p>
+    <p>TODO: replot and explain plot.</p>
     <iframe 
       src="{{ 'assets/img/general_title_Delta_DonaldNon-LIWC_Features.html' | relative_url }}"
       width="100%" 
@@ -64,6 +64,10 @@
   border-radius: 4px;
 }
 
+.plotly-container h4 {
+  text-align: center;
+}
+
 .caption {
   font-style: italic;
   color: #666;
@@ -79,130 +83,3 @@
   }
 }
 </style>
-
-
-
-<div class="body_class-selection">
-  <button class="time-btn active" onclick="showTimeView_donald('body_donald', event)">🔡 Body analysis </button>
-  <button class="time-btn" onclick="showTimeView_donald('title_donald', event)">🔤 Title analysis </button>
-</div>
-
-<div id="body_donald-view" class="time-view active">
-  <h4>Analysis for cases where the hyperlinks are in the comment's body</h4>
-  <p>Change in linguisitcs patterns of the targetted subreddit after an incoming conflict.</p>
-
-  <iframe
-    data-src="{{ 'assets/img/the_donald_Delta_LIWC_Features.html' | relative_url }}"
-    width="100%" 
-    height="575"
-    frameborder="0"
-    scrolling="no"
-    style="border: 1px solid #ddd; border-radius: 8px;">
-  </iframe>
-
-  <iframe
-    data-src="{{ 'assets/img/the_donald_Delta_Non-LIWC_Features.html' | relative_url }}"
-    width="100%" 
-    height="575"
-    frameborder="0"
-    scrolling="no"
-    style="border: 1px solid #ddd; border-radius: 8px;">
-  </iframe>
-</div>
-
-<div id="title_donald-view" class="time-view">
-  <h4>Analysis for cases where the hyperlinks are in the comment's title</h4>
-  <p>Change in linguisitcs patterns of the targetted subreddit after an incoming conflict.</p>
-
-  <iframe
-      data-src="{{ 'assets/img/general_title_Delta_DonaldLIWC_Features.html' | relative_url }}"
-      width="100%" 
-      height="575"
-      frameborder="0"
-      scrolling="no"
-      style="border: 1px solid #ddd; border-radius: 8px;">
-  </iframe>
-
-  <iframe
-      data-src="{{ 'assets/img/general_title_Delta_DonaldNon-LIWC_Features.html' | relative_url }}"
-      width="100%" 
-      height="575"
-      frameborder="0"
-      scrolling="no"
-      style="border: 1px solid #ddd; border-radius: 8px;">
-  </iframe>
-</div>
-
-<style>
-.body_class-selection {
-  display: flex;
-  gap: 15px;
-  margin: 2rem 0;
-  justify-content: center;
-}
-
-.time-btn {
-  padding: 12px 24px;
-  border: 2px solid #e0e0e0;
-  background: white;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-}
-
-.time-btn.active {
-  background: #007bff;
-  color: white;
-  border-color: #007bff;
-}
-
-.time-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.time-view {
-  display: none;
-}
-
-.time-view.active {
-  display: block;
-}
-
-.time-view h4 {
-  color: #333;
-}
-
-.time-view p {
-  color: #666;
-  margin: 0.25rem 0 0.75rem;
-}
-</style>
-
-<script>
-function showTimeView_donald(viewType, event) {
-  // Remove active class from all buttons
-  document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-
-  // Hide all views
-  document.querySelectorAll('.time-view').forEach(view => view.classList.remove('active'));
-
-  // Show selected view
-  const activeView = document.getElementById(viewType + '-view');
-  activeView.classList.add('active');
-
-  // Lazy-load iframes: set src from data-src
-  activeView.querySelectorAll('iframe').forEach(iframe => {
-    if (!iframe.src) iframe.src = iframe.dataset.src;
-  });
-}
-
-// Automatically load iframes in the default active tab
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.time-view.active iframe').forEach(iframe => {
-    if (!iframe.src) iframe.src = iframe.dataset.src;
-  });
-});
-</script>

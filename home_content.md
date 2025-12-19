@@ -33,10 +33,14 @@ The word clouds below illustrate the stark contrast between positive and negativ
 
 ### Lexicon of Positivity
 
+*TODO: explain and analyse*
+
 {% include_relative figs/lexicon_positivity.html %}
 
 
 ### Lexicon of Negativity
+
+*TODO: explain and analyse*
 
 {% include_relative figs/lexicon_negativity.html %}
 
