@@ -247,7 +247,7 @@ As in the conflict analysis, the plots below illustrate the changes in linguisti
 ## Random Forest Analysis
 
 <!-- Text reviewed -->
-We used a Random Forest model to determine which characteristics of incoming conflicts best explain differences in the linguistic responses of targeted subreddits. The tables below summarize the results obtained from this method. Due to the difficulty of fitting the data, not all linguistic feature deltas could be predicted. While it is difficult to draw conclusions from the results, the influence of certain conflict features is intriguing. For example, in the title analysis, the delta of the `LIWC Negate` feature was influenced by LIWC features such as `Dissent` or `frac_upper`, which could be considered aggressive.
+To estimate the linguistic characteristics that impact the targeted subreddit the most, we used a Random Forest model to identify the features that best predict post-conflict linguistic changes. The tables below summarize the results obtained from this method. Due to the difficulty of fitting the data, not all linguistic feature deltas could be predicted. While it is difficult to draw conclusions from the results, the influence of certain conflict features is intriguing. For example, in the title analysis, the delta of the `LIWC Negate` feature was influenced by LIWC features such as `Dissent` or `frac_upper`, which could be considered aggressive.
 
 
 #### Analysis on the Body of the Posts
@@ -323,28 +323,101 @@ The results reveal distinct linguistic profiles across clusters:
 Together, these findings demonstrate that clusters differ not only in what topics they discuss, but also in how they express them linguistically, with each cluster exhibiting a distinct emotional and cognitive signature.
 
 
-# From Digital to Real World
+# From Digital to Real World - 2016 Presidential Election
 
 {% include_relative figs/digital_real_intro_pic.html %}
 
 *TODO: 2016 U.S.A. presidential election*  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+To link Reddit conflict dynamics with real-world events, we first use Google Trends to track the public's interest in relevant topics over time, such as the United States presidential election, key candidates, and notable events. Peaks in search interest allow us to identify moments when global attention was heightened. We can then compare these moments with spikes in negative interactions between subreddit clusters.
 
-<!-- To have graph below picture too -->
+<!-- To have text below picture too -->
 <div style="clear: both;"></div>
 
-{% include_relative figs/google_trends_us_presidential_election_topics_(2014-2017).html %}
+
+## Global Events from Google Trends
+
+We will analyze the topic of the "United States presidential election" using Google Trends data from January 1, 2014, to April 30, 2017.
+In the next section, we will display the plots of the following people:
+- `US_presidential_election`,
+- `Donald_Trump`,
+- `Trump_movie`,
+- `Trump_vs_Clinton_movie`,
+- and `UK_Brexit`.
 
 {% include_relative figs/google_trends_2014-2017_detected_peak_per_topic.html %}
 
+Using the maximum-interest dates detected for each topic, it is clear that several peaks correspond to major political events during the 2016 U.S. presidential cycle or other events that had a global impact:
+- **`US_presidential_election` — Peak on November 6, 2016**  
+    This peak occurred two days before the U.S. presidential election on November 8, 2016. Public attention was at its maximum as voters searched for polls, forecasts, and last-minute news. This peak is the largest in the entire dataset and aligns with the period's most intense political moment.
+- **`Donald_Trump` — Peak on November 6, 2016**  
+    This coincides with the pre-election surge that occurred before. As media coverage intensified, debates concluded, and final campaign events took place, searches for the eventual winner sharply increased.
+- **`Trump_movie` — Peak on February 7, 2016**  
+    This peak aligns with the February 2016 primary season, when media content about Trump surged, including documentaries, commentary videos, and satirical releases. This reflects the secondary cultural attention surrounding the election.
+- **`Trump_vs_Clinton_movie` — Peak on September 25, 2016**  
+    This week coincides with the first presidential debate between Donald Trump and Hillary Clinton on September 26, 2016. It was one of the most-watched political debates in U.S. history, which explains the spike in searches for related media content.
+- **`UK_Brexit` — Peak on June 19, 2016**  
+    This is the week immediately preceding the Brexit referendum on June 23, 2016. The outcome shocked global markets and sparked renewed interest in populism worldwide, generating significant cross-country attention that overlaps with U.S. political discourse.
+
+
+## Linking Global Events to Reddit Activity
+
+After identifying major political and global events using Google Trends, the next step is to examine whether these events correspond to changes in online dynamics. To accomplish this, we will turn to Reddit datasets, which offer extensive behavioral data on user interactions within political and non-political communities. Aligning the previously detected event dates with Reddit activity patterns, such as conflict scores, cross-community interactions, and posting volume, makes it possible to assess whether spikes in public attention and political tension translate into measurable fluctuations on Reddit. The Reddit data will be analyzed in the following sections with this goal in mind, allowing for a direct comparison between offline events and online reactions.
+
+
+### Comparison with Google Trends Peaks
+
+{% include_relative figs/google_comparison_pic.html %}
+
+The goal now is to compare the activity of political subreddits with major events identified in Google Trends. By examining how Reddit discussions align with broader public interest, we can better understand the dynamics of political engagement online.
+
+First, we filter the dataset to include only subreddits with known party labels. Then, we compute daily post counts for each party. Next, we identify the dates of peak activity for subreddits labeled as Republican or Democrat.
+
+Finally, we compare these Reddit peaks with Google Trends peaks and visualize the results using a time series plot. In the plot, daily post counts are shown in color (red for Republican and blue for Democrat), and vertical dashed lines indicate corresponding Google Trends peaks. This allows for an intuitive assessment of their alignment.
+
+<!-- To have text below picture too -->
+<div style="clear: both;"></div>
+
 {% include_relative figs/political_activity_trends_peaks.html %}
+
+From the comparison, we can see that Republican-labeled subreddits were more active than Democrat-labeled ones during the analyzed period. Additionally, Reddit activity peaks generally follow major events highlighted by Google Trends. For instance, both parties show increased activity around the U.S. presidential election on November 6, 2016, with Reddit peaks occurring shortly after (Republicans: November 9, 2016; Democrats: November 7, 2016). Another notable alignment occurred around the UK Brexit vote on June 19, 2016, reflecting heightened political discussion on Reddit in response to a globally significant event. Overall, these results suggest that Reddit activity partially mirrors broader public interest, as reflected in search trends, particularly during significant political events.
+
+
+### Compute Cross-Sentiments Between the Groups
+
+To measure negativity in interactions between political communities, we focus on cross-party interactions. This means we look at posts where a subreddit from one party engages with a subreddit from the other party, such as Republican → Democrat or Democrat → Republican. First, we map the target subreddit to its party label, keeping only interactions where both the source and target parties are known. From these interactions, we select only cross-party ones. For each direction, we calculate the total number of interactions and the number of negative interactions, which we define as those with a `LINK_SENTIMENT` value of -1, following our previously defined conflict metric, we then calculate a negativity rate. We also estimate 95% confidence intervals for these rates using a normal approximation. Finally, we visualize the results with a bar plot showing the negativity rates and their confidence intervals. This allows us to compare the intensity of negative sentiment across political communities.
 
 {% include_relative figs/cross_party_negativity.html %}
 
+
+*TODO: (Laura) t-test ?*
+
+
+### Party Representation and Cross-Party Activity
+
+We observe that Republican subreddits are very active in cross-party interactions. However, this raises the question of whether their higher activity is simply due to overrepresentation. To investigate this, we compared the number of subreddits and posts generated by each party. After excluding neutral subreddits, we counted the number of Democrat and Republican communities, as well as their total posts in cross-party interactions. This comparison allows us to determine if the observed differences in activity reflect genuine engagement patterns or if they are driven by the larger number of Republican subreddits.
+
 {% include_relative figs/dem_rep_activity.html %}
 
+The results show that although there are fewer Republican subreddits than Democrat subreddits, they generate more posts in cross-party interactions. This suggests that their increased activity is not due to overrepresentation, but rather, reflects a greater level of engagement in political discussions.
+
+
+### Temporal Evolution of Cross-Party Negativity
+
+Now, we analyze how negativity between political subreddits evolves over time. We do this by computing the quarterly negativity rate for cross-party interactions and excluding neutral communities. For each quarter, we calculate the proportion of interactions with a `LINK_SENTIMENT` of -1 for both Republican → Democrat and Democrat → Republican interactions.
+
+We visualize the results as a line plot showing the quarterly negativity trends for each party. This allows us to observe how cross-party sentiment changes over time and identify periods with higher levels of negative engagement.
+
 {% include_relative figs/cross_negativity_over_quarter.html %}
+
+Overall, we observe that Republican subreddits display higher negativity rates toward Democrats than Democrats do toward Republicans. Throughout the observed period, this suggests that stronger negative sentiment consistently comes from Republican communities in cross-party interactions.
+
+
+### LIWC Word Cloud of Party
+
+We now visualize the language used in cross-party interactions by plotting LIWC-based word clouds. Specifically, we generate separate word clouds for posts from Republican subreddits directed at Democratic subreddits (Republican → Democratic) and for posts from Democratic subreddits directed at Republican subreddits (Democratic → Republican). This allows us to see which words and categories dominate the discourse between these two political communities.
 
 {% include_relative figs/liwc_word_cloud_republican__to__democrat.html %}
 
 {% include_relative figs/liwc_word_cloud_democrat__to__republican.html %}
+
+Upon inspection, the LIWC word clouds do not reveal clear or relevant patterns that distinguish Republican and Democrat interactions. While some common words and categories appear, they do not offer significant insights beyond those observed in the negativity and activity analyses.
