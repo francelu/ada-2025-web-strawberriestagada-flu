@@ -50,7 +50,7 @@ When does conflict flare up? The following timelines zoom from years down to day
 {% include_relative figs/negativity_pulse.html %}
 
 
-### Identifying the Verbel Arsenal
+### Identifying the Verbal Arsenal
 
 {% include_relative figs/verbal_arsenal_pic.html %}
 

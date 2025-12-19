@@ -1,9 +1,10 @@
 <div class="plotly-grid">
   <div class="plotly-container">
     <iframe 
+      id="rf-importance-iframe"
       src="{{ 'assets/img/rf-importance.html' | relative_url }}"
       width="100%" 
-      height="500"
+      height=auto
       frameborder="0"
       scrolling="no">
     </iframe>
@@ -12,9 +13,10 @@
   
   <div class="plotly-container">
     <iframe 
+      id="rf-text-importance-iframe"
       src="{{ 'assets/img/rf-text--importance.html' | relative_url }}"
       width="100%" 
-      height="500"
+      height=auto
       frameborder="0"
       scrolling="no">
     </iframe>
@@ -59,3 +61,23 @@
   }
 }
 </style>
+
+<script>
+function resizeIframeLIWC() {
+  const iframe = document.getElementById('rf-importance-iframe');
+  iframe.onload = () => {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  };
+}
+
+function resizeIframeText() {
+  const iframe = document.getElementById('rf-text-importance-iframe');
+  iframe.onload = () => {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  };
+}
+
+// Call the function
+resizeIframeLIWC();
+resizeIframeText();
+</script>
