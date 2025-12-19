@@ -90,7 +90,27 @@ Analyzing the evolution of negativity characteristics in conflictual outgoing ev
 
 To study whether conflict changes the LIWC characteristics of a targeted subreddit, we computed the change in the subreddit's LIWC by comparing its mean LIWC after an incoming conflict during a 48-hour window with its mean LIWC before the conflict during a one-month window. Only situations without overlapping conflicts were chosen to study the effect of each conflict individually. Then, a t-test was applied to compare the obtained delta of LIWC to zero, and the variables most correlated with each change in LIWC were determined. 
 
-{% include_relative figs/body_title_general.html %}
+
+#### Analysis on the body of the posts
+
+TODO: explain plot
+
+{% include_relative figs/body_general_LIWC.html %}
+
+TODO: explain plot
+
+{% include_relative figs/body_general_nonLIWC.html %}
+
+
+#### Analysis on the title of the posts
+
+TODO: explain plot
+
+{% include_relative figs/title_general_LIWC.html %}
+
+TODO: explain plot
+
+{% include_relative figs/title_general_nonLIWC.html %}
 
 
 ### `the_donald` Case
