@@ -115,7 +115,27 @@ TODO: explain plot
 
 ### `the_donald` Case
 
-{% include_relative figs/the_donald_body_title.html %}
+
+#### Analysis on the body of the posts
+
+TODO: explain plot
+
+{% include_relative figs/body_donald_LIWC.html %}
+
+TODO: explain plot
+
+{% include_relative figs/body_donald_nonLIWC.html %}
+
+
+#### Analysis on the title of the posts
+
+TODO: explain plot
+
+{% include_relative figs/title_donald_LIWC.html %}
+
+TODO: explain plot
+
+{% include_relative figs/title_donald_nonLIWC.html %}
 
 *TODO: add a transition to explain the next plots*  
 Upon examining `the_donald` subreddit more closely, we observe some changes related to incoming conflicts. These changes can be explained by the composition of the subreddit and the characteristics of the conflicts. 
