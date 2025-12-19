@@ -49,7 +49,6 @@ The word clouds below illustrate the stark contrast between positive and negativ
 
 When does conflict flare up? The following timelines zoom from years down to days, revealing the rhythms and eruptions of online hostility. They allow us to identify long-term trends and pinpoint the days when the digital world held its breath.
 
-*TODO: graphs are too narrow*  
 {% include_relative figs/negativity_pulse.html %}
 
 
