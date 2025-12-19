@@ -1,107 +1,69 @@
-<div class="body_class-selection">
-  <button class="time-btn active" onclick="showTimeView_rf('body_rf', this)">🔡 Body analysis</button>
-  <button class="time-btn" onclick="showTimeView_rf('title_rf', this)">🔤 Title analysis</button>
-</div>
-
-<div id="body_rf-view" class="time-view active">
-  <h4>Analysis for cases where the hyperlinks are in the comment's body</h4>
-  <p>Change in linguistic patterns of the targeted subreddit after an incoming conflict.</p>
-  <iframe 
-      data-src="{{ 'assets/img/rf_summary_table_resp.html' | relative_url }}"
+<div class="plotly-grid">
+  <div class="plotly-container">
+    <h4>Analysis on the body of the posts</h4>
+    <p>TODO: replot and explain plot.</p>
+    <iframe 
+      src="{{ 'assets/img/rf_summary_table_resp.html' | relative_url }}"
       width="100%" 
-      height="400"
+      height="600"
       frameborder="0"
-      scrolling="no"
-      style="border: 1px solid #ddd; border-radius: 8px;">
-  </iframe>
-</div>
-
-<div id="title_rf-view" class="time-view">
-  <h4>Analysis for cases where the hyperlinks are in the comment's title</h4>
-  <p>Change in linguistic patterns of the targeted subreddit after an incoming conflict.</p>
-  <iframe 
-      data-src="{{ 'assets/img/rf_summary_title_table_resp.html' | relative_url }}"
+      scrolling="no">
+    </iframe>
+    <p class="caption"></p>
+  </div>
+  
+  <div class="plotly-container">
+    <h4>Analysis on the title of the posts</h4>
+    <p>TODO: replot and explain plot.</p>
+    <iframe 
+      src="{{ 'assets/img/rf_summary_title_table_resp.html' | relative_url }}"
       width="100%" 
-      height="400"
+      height="600"
       frameborder="0"
-      scrolling="no"
-      style="border: 1px solid #ddd; border-radius: 8px;">
-  </iframe>
+      scrolling="no">
+    </iframe>
+    <p class="caption"></p>
+  </div>
 </div>
 
 <style>
-.body_class-selection {
+.plotly-grid {
   display: flex;
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 20px;
   margin: 2rem 0;
-  justify-content: center;
 }
 
-.time-btn {
-  padding: 12px 24px;
-  border: 2px solid #e0e0e0;
-  background: white;
+.plotly-container {
+  flex: 1 1 calc(50% - 10px);
+  min-width: 300px;
+  border: 1px solid #eaeaea;
   border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
+  padding: 15px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.time-btn.active {
-  background: #007bff;
-  color: white;
-  border-color: #007bff;
+.plotly-container iframe {
+  border-radius: 4px;
 }
 
-.time-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.plotly-container h4 {
+  text-align: center;
 }
 
-.time-view {
-  display: none;
-}
-
-.time-view.active {
-  display: block;
-}
-
-.time-view h4 {
-  color: #333;
-}
-
-.time-view p {
+.caption {
+  font-style: italic;
   color: #666;
-  margin: 0.25rem 0 0.75rem;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+  .plotly-container {
+    flex: 1 1 100%;
+  }
 }
 </style>
-
-<script>
-function showTimeView_rf(viewType, btn) {
-  const container = btn.closest('div').parentElement;
-
-  // Buttons
-  container.querySelectorAll('.time-btn')
-    .forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-
-  // Views
-  container.querySelectorAll('.time-view')
-    .forEach(v => v.classList.remove('active'));
-
-  const activeView = container.querySelector('#' + viewType + '-view');
-  activeView.classList.add('active');
-
-  // Lazy-load iframe
-  activeView.querySelectorAll('iframe').forEach(iframe => {
-    if (!iframe.src) iframe.src = iframe.dataset.src;
-  });
-}
-
-// Load default active tab iframe on page load
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.time-view.active iframe').forEach(iframe => {
-    if (!iframe.src) iframe.src = iframe.dataset.src;
-  });
-});
-</script>
