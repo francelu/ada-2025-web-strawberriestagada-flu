@@ -114,8 +114,13 @@ When analyzing the bodies of the posts, the conflicts significantly altered the 
 
 ### `the_donald` Case
 
+{% include_relative figs/the_donald_case_pic.html %}
+
 <!-- Text reviewed -->
 To delve deeper into the analysis of the real world, individual analyses were also carried out. Here is an example using the targeted subreddit, `the_donald`. When analyzing the LIWC features of the posts' bodies, `LIWC Function`, `Adverbs`, and `Negation` increased significantly, while `Social` and `Body` decreased. No significant changes were observed for the non-LIWC features. When analyzing the LIWC features of the post titles, the `Excl`, `Money`, and `Assent` features decreased. Upon examining `the_donald` subreddit more closely, we observe some changes related to incoming conflicts. These changes can be explained by the composition of the subreddit and the characteristics of the conflicts. 
+
+<!-- To have title below picture too -->
+<div style="clear: both;"></div>
 
 
 #### Analysis on the Body of the Posts
