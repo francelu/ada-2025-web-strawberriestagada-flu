@@ -142,7 +142,20 @@ Upon examining `the_donald` subreddit more closely, we observe some changes rela
 
 The table below shows the most correlated incoming features for each of the delta features. The incoming feature `frac_upper`, which corresponds to the proportion of capital letters in the incoming text, seems to be correlated with the most delta features, such as `delta_num_long_sentences` and `delta_frac_specials` (the proportion of special characters in the text). 
 
-{% include_relative figs/the_donald_correlation.html %}
+
+#### Analysis on the body of the posts
+
+TODO: explain plot
+
+{% include_relative figs/body_donald_corr.html %}
+
+
+#### Analysis on the title of the posts
+
+TODO: explain plot
+
+{% include_relative figs/title_donald_corr.html %}
+
 
 
 ## The Rhythm of Recovery: How Communities Heal Their Linguistic Scars
