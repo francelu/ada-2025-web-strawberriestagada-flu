@@ -1,8 +1,20 @@
 <iframe 
+    id="negative-liwc-dashboard-donald-iframe"
     src="{{ 'assets/img/negative_LIWC_dashboard_the_donald.html' | relative_url }}"
     width="100%" 
-    height="600"
+    height=auto
     frameborder="0"
-    scrolling="no"
-    style="border: 1px solid #ddd; border-radius: 8px;">
+    scrolling="no">
 </iframe>
+
+<script>
+function resizeIframe() {
+  const iframe = document.getElementById('negative-liwc-dashboard-donald-iframe');
+  iframe.onload = () => {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  };
+}
+
+// Call the function
+resizeIframe();
+</script>

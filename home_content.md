@@ -72,7 +72,6 @@ Our analysis reveals that several linguistic characteristics are powerful indica
 
 ### Outgoing Interactions from `the_donald`
 
-*TODO: maybe detail if it's based on the `POST_LABEL` / hyperlink ?*  
 Below is plotted the linguistic characteristics evolution for negative outgoing interactions from `the_donald`.
 
 {% include_relative figs/the_donald_negative_LIWC_dashboard.html %}
@@ -120,12 +119,9 @@ When a community is targeted by a hostile post, its language doesn't immediately
 <!-- To have graph below picture too -->
 <div style="clear: both;"></div>
 
-*TODO: (huh - France) new graph Recovery_bar_plot.html mais fait beuguer quand j'essaie*
-
 {% include_relative figs/recovery_bar_plot.html %}
 
 Our analysis reveals distinct patterns in how different psychological features respond to and recover from conflict. Social language and cognitive mechanisms demonstrate the most significant reductions following attacks, decreasing by -0.0003 and -0.0001, respectively. These findings suggest that communities respond to hostility by becoming less socially engaged and reducing their analytical thinking. This behavior is also observed in positive, negative, and neutral emotion words. Negative emotions show the largest increase, with rises in swear words, anger, sadness, and anxiety vocabulary.
-
 
 
 ### The Recovery Timeline: Fast Bounces and Lasting Scars
@@ -200,9 +196,7 @@ We use a random forest model to determine which characteristics of incoming conf
 
 {% include_relative figs/snowball_effect_pic.html %}
 
-*TODO: integrate intro text with the research questions below*
-
-How do repeated inter-subreddit conflicts shape the linguistic and emotional tone of both attackers and targets over time, and do these patterns suggest a cumulative negativity ? What are the distinctive LIWC profiles of different community clusters during periods of normal interaction?
+Online communities often interact through conflict, which can trigger cascading patterns of negativity. In this section, we will examine whether negative language from attacking subreddits influences the subsequent emotional and linguistic behaviors of targeted communities, producing a snowball effect of cumulative negativity. How do repeated inter-subreddit conflicts shape the linguistic and emotional tone (LIWC features) of targets over time, and do these patterns suggest a cumulative negativity ?
 
 We use Granger causality tests to determine whether being attacked (receiving negative sentiment posts) causally influences a community's subsequent negative behavior. These tests examine whether knowledge of past values in one time series (attacks received) improves the prediction of another time series (negative behavior emitted).
 
@@ -235,8 +229,7 @@ These results suggest that online attacks systematically create cycles of negati
 
 {% include_relative figs/cluster_profiling_pic.html %}
 
-*TODO: check new research questions below, redefin, synchronise with project readme*  
-Online communities often form clusters based on shared common interests, behaviors, or emotional dynamics. These clusters can exhibit distinctive patterns in how their members use language, reflecting differences in emotional, cognitive, and social expression. How do clusters of online communities differ in their linguistic profiles? To what extent can these differences be characterized systematically using psychological and emotional language features?
+Online communities often form clusters based on shared common interests, behaviors, or emotional dynamics. These clusters can exhibit distinctive patterns in how their members use language, reflecting differences in emotional, cognitive, and social expression. How do the linguistic profiles of online community clusters, as captured through LIWC features, relate to and predict the propagation of conflict between communities? What are the distinctive LIWC profiles of different community clusters during periods of normal interaction?
 
 In this part, subreddits are gathered in clusters of communities, made on the positive network (affection between subreddits) using the Louvain method and one the embedding (similarity of the subreddits respect to their posting users) using a k-mean algorithm. To simplify the analysis, only the 7 most virulent clusters are selected. Each cluster is assigned to each subreddit and a theme is manually assigned to each cluster as shown on below plot.
 
