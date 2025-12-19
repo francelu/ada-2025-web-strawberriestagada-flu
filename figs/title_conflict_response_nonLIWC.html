@@ -1,0 +1,20 @@
+<iframe 
+    id="conflict-response-title-nonliwc-iframe"
+    src="{{ 'assets/img/conflict_response_title_Delta_Non-LIWC_Features.html' | relative_url }}"
+    width="100%" 
+    height=auto
+    frameborder="0"
+    scrolling="no">
+</iframe>
+
+<script>
+function resizeIframe() {
+  const iframe = document.getElementById('conflict-response-title-nonliwc-iframe');
+  iframe.onload = () => {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  };
+}
+
+// Call the function
+resizeIframe();
+</script>

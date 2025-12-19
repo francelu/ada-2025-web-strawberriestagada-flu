@@ -229,7 +229,27 @@ This section examines how a subreddit under attack may respond to the attacking 
 <!-- To have graph below picture too -->
 <div style="clear: both;"></div>
 
-{% include_relative figs/body_title_conflict_response.html %}
+
+#### Analysis on the body of the posts
+
+TODO: explain plot
+
+{% include_relative figs/body_conflict_response_LIWC.html %}
+
+TODO: explain plot
+
+{% include_relative figs/body_conflict_response_nonLIWC.html %}
+
+
+#### Analysis on the title of the posts
+
+TODO: explain plot
+
+{% include_relative figs/title_conflict_response_LIWC.html %}
+
+TODO: explain plot
+
+{% include_relative figs/title_conflict_response_nonLIWC.html %}
 
 *TODO: analyse or explain more !*
 
