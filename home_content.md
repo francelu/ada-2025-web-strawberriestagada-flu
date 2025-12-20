@@ -425,10 +425,26 @@ Upon inspection, the LIWC word clouds do not reveal clear or relevant patterns t
 
 # Contributions
 
-- Charlotte WANG: Cluster definition, development, and macro-level analysis of inter-cluster dynamics.
-- Miyuka LAURENSON: Conflict definition, primary analysis of LIWC changes post-conflict, and Random Forest modeling to predict impact severity.
-- Mathilde BOUSSEMART: GitHub repository management, project overview analysis (A Portrait of the Dataset), and specific analysis of the linguistic patterns in the victim community's direct responses to attackers, time to recovery and snowball effect. 
-- Laura TAGHIZAD: GitHub repository management, descriptive analysis, primary analysis of LIWC changes, presidential elections analysis, website management.
-- France LU: GitHub repository management, descriptive analysis, project overview analysis, presidential elections analysis, website management and design.
+We are the strawberriestagada team.
+
+{% include_relative figs/strawberriestagada_pic.html %}
+
+**Charlotte WANG**  
+Cluster definition, development, and macro-level analysis of inter-cluster dynamics.
+
+**Miyuka LAURENSON**  
+Conflict definition, primary analysis of LIWC changes post-conflict, and Random Forest modeling to predict impact severity.
+
+**Mathilde BOUSSEMART**  
+GitHub repository management, project overview analysis (A Portrait of the Dataset), and specific analysis of the linguistic patterns in the victim community's direct responses to attackers, time to recovery and snowball effect. 
+
+**Laura TAGHIZAD**  
+GitHub repository management, descriptive analysis, primary analysis of LIWC changes, presidential elections analysis, website management.
+
+**France LU**  
+GitHub repository management, descriptive analysis, project overview analysis, presidential elections analysis, website management and design.
+
+<!-- To have gif below picture too -->
+<div style="clear: both;"></div>
 
 {% include_relative figs/end_gif.html %}
