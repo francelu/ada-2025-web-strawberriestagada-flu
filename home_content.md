@@ -374,7 +374,7 @@ First, we filter the dataset to include only subreddits with known party labels.
 
 Finally, we compare these Reddit peaks with Google Trends peaks and visualize the results using a time series plot. In the plot, daily post counts are shown in color (red for Republican and blue for Democrat), and vertical dashed lines indicate corresponding Google Trends peaks. This allows for an intuitive assessment of their alignment.
 
-<!-- To have text below picture too -->
+<!-- To have graph below picture too -->
 <div style="clear: both;"></div>
 
 {% include_relative figs/political_activity_trends_peaks.html %}
