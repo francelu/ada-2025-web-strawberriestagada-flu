@@ -421,3 +421,14 @@ We now visualize the language used in cross-party interactions by plotting LIWC-
 {% include_relative figs/liwc_word_cloud_democrat__to__republican.html %}
 
 Upon inspection, the LIWC word clouds do not reveal clear or relevant patterns that distinguish Republican and Democrat interactions. While some common words and categories appear, they do not offer significant insights beyond those observed in the negativity and activity analyses.
+
+
+# Contributions
+
+- Charlotte WANG: Cluster definition, development, and macro-level analysis of inter-cluster dynamics.
+- Miyuka LAURENSON: Conflict definition, primary analysis of LIWC changes post-conflict, and Random Forest modeling to predict impact severity.
+- Mathilde BOUSSEMART: GitHub repository management, project overview analysis (A Portrait of the Dataset), and specific analysis of the linguistic patterns in the victim community's direct responses to attackers, time to recovery and snowball effect. 
+- Laura TAGHIZAD: GitHub repository management, descriptive analysis, primary analysis of LIWC changes, presidential elections analysis, website management.
+- France LU: GitHub repository management, descriptive analysis, project overview analysis, presidential elections analysis, website management and design.
+
+{% include_relative figs/end_gif.html %}
