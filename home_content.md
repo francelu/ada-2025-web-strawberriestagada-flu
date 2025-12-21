@@ -124,7 +124,7 @@ When analyzing the bodies of the posts, the conflicts significantly altered the 
 {% include_relative figs/the_donald_case_pic.html %}
 
 <!-- Text reviewed -->
-To delve deeper into the analysis of the real world, individual analyses were also carried out. Here is an example using the targeted subreddit, `the_donald`. When analyzing the LIWC features of the posts' bodies, `LIWC Function`, `Adverbs`, and `Negation` increased significantly, while `Social` and `Body` decreased. No significant changes were observed for the non-LIWC features. When analyzing the LIWC features of the post titles, the `Excl`, `Money`, and `Assent` features decreased. Upon examining `the_donald` subreddit more closely, we observe some changes related to incoming conflicts. These changes can be explained by the composition of the subreddit and the characteristics of the conflicts. 
+To further ground the analysis in concrete cases, we conducted subreddit-level analyses. One illustrative example is the targeted subreddit `the_donald`. 
 
 <!-- To have title below picture too -->
 <div style="clear: both;"></div>
@@ -143,6 +143,9 @@ To delve deeper into the analysis of the real world, individual analyses were al
 
 {% include_relative figs/title_donald_nonLIWC.html %}
 
+Following incoming conflicts, the body of posts shows significant increases in function words, adverbs, and negations (`LIWC_Funct`, `LIWC_Adverbs`, `LIWC_Negate`), alongside decreases in social and body-related terms (`LIWC_Social`, `LIWC_Body`). Taken together, this pattern indicates a shift toward a more argumentative and defensive style of writing: users rely more heavily on grammatical structure and explicit negation to articulate opposition, while references to social relationships or concrete experiences become less frequent. This suggests that post-conflict discourse is less about interaction or shared experience and more about asserting positions and rejecting opposing viewpoints. No significant changes were observed for non-LIWC features.
+
+In contrast, changes in post titles are smaller and different. The decrease in exclusion words (`LIWC_Excl`) and assent words (`LIWC_Assent`) suggests that titles become more direct and less nuanced after conflicts. The drop in money-related terms (`LIWC_Money`) likely reflects a shift in topics rather than style. Overall, titles seem to focus on framing the post, while the detailed arguments appear in the body.
 
 ### Correlated Incoming Linguistic Features
 
@@ -159,8 +162,10 @@ The tables below show the most correlated incoming features for each of the delt
 
 {% include_relative figs/title_donald_corr.html %}
 
+
 In the body analysis, the incoming feature `frac_upper`, which corresponds to the proportion of capital letters in the incoming text, seems to be correlated with the most delta features, such as `delta_num_long_sentences` and `delta_frac_specials` (the proportion of special characters in the text). 
 Indeed, `frac_upper` captures the intensity of the incoming conflict. High use of capital letters typically signals emphasis, urgency, or aggression. Such incoming messages are more likely to provoke stronger reactions in the targeted subreddit, leading to longer posts, more sentences, and higher character and word counts, as users respond with explanations, arguments, or counter-attacks rather than brief replies. This high occurence of positive correlations therefore suggest that capitalization may not be a causal driver by itself, but a proxy for conflict severity, which amplifies linguistic activity and stylistic expressiveness after the conflict.
+
 The analysis of titles reveals a markedly different mechanism. In contrast to the body text, `frac_upper` does not play a dominant role, and no single linguistic feature clearly stands out in terms of influence. This is further supported by the overall lower correlation values, indicating weaker and more diffuse associations between incoming features and LIWC changes in titles.
 
 ## The Rhythm of Recovery: How Communities Heal Their Linguistic Scars
@@ -240,7 +245,7 @@ Our analysis reveals that swear is the most powerful linguistic trigger in attac
 This section examines how a subreddit under attack may respond to the attacking subreddit, considering the characteristics of the attacking hyperlinks' comments. The analyses performed here are similar to those performed for the general case, but are applied only to outgoing activities of the subreddit directed toward the attacker within 72 hours after the incoming conflict begins. 
 
 <!-- Text reviewed -->
-As in the conflict analysis, the plots below illustrate the changes in linguistic features of outgoing interactions from the targeted subreddit towards the source of the conflict. The significant increase in non-LIWC characteristics indicates longer texts containing more words, sentences, and special characters. Thus, the targeted subreddit responds to the source of the conflict with more intense comments than it does to a random hyperlink mention.
+As in the conflict analysis, the plots below illustrate the changes in linguistic features of outgoing interactions from the targeted subreddit towards the source of the conflict. 
 
 <!-- To have graph below picture too -->
 <div style="clear: both;"></div>
@@ -259,11 +264,16 @@ As in the conflict analysis, the plots below illustrate the changes in linguisti
 
 {% include_relative figs/title_conflict_response_nonLIWC.html %}
 
+For the post bodies, LIWC changes were minimal, with only a decrease in `LIWC_Bio`, which is difficult to interpret. Non-LIWC features, however, show a general increase across all metrics (`num_chars`, `num_long_sentences`, `num_words`, ...), suggesting that responses tend to be longer and more elaborated.
+
+For the post titles, the LIWC features show widespread increases, including function words, pronouns, verbs, present/future tense, adverbs, swear words, inclusive/exclusive terms, and more. In contrast, decreases appear in references to family, humans, causation, relative terms, and religion. Non-LIWC features mirror the body, showing a general increase in length and complexity.
+
+Overall, this pattern suggests that the subreddit under attack responds with longer, more detailed, and linguistically richer posts, both in bodies and titles. The increases in function, pronoun, verb, and social/cognitive words indicate a shift toward active engagement, argumentation, and social signaling, while the decreases in family, humans, and religious terms may reflect a narrowing of content focus toward conflict-related topics rather than general discussion.
 
 ## Random Forest Analysis
 
 <!-- Text reviewed -->
-To estimate the linguistic characteristics that impact the targeted subreddit the most, we used a Random Forest model to identify the features that best predict post-conflict linguistic changes. The tables below summarize the results obtained from this method. Due to the difficulty of fitting the data, not all linguistic feature deltas could be predicted. While it is difficult to draw conclusions from the results, the influence of certain conflict features is intriguing. For example, in the title analysis, the delta of the `LIWC Negate` feature was influenced by LIWC features such as `Dissent` or `frac_upper`, which could be considered aggressive.
+To estimate the linguistic characteristics that impact the targeted subreddit the most, we used a Random Forest model to identify the features that best predict post-conflict linguistic changes. The tables below summarize the results obtained from this method. Due to the difficulty of fitting the data, not all linguistic feature deltas could be predicted. 
 
 
 #### Analysis on the Body of the Posts
@@ -274,6 +284,10 @@ To estimate the linguistic characteristics that impact the targeted subreddit th
 #### Analysis on the Title of the Posts
 
 {% include_relative figs/title_random_forest.html %}
+
+Analysing the boty, the Random Forest analysis indicates that incoming stylistic and emotional cues seems to shape the subreddit’s linguistic response. In particular, capitalization (`frac_upper`) emerges as a strong predictor of increases in `LIWC_Certain`, suggesting that messages with high emphasis or intensity trigger more assertive responses. Numerical content (`frac_digits`) in incoming posts tends to trigger responses that mirror quantitative references or formatting, likely because users engage with facts, figures, or structured arguments. 
+
+Analysing the titles, the subreddit’s responses are influenced by clear stylistic and structural cues. Capitalization (`frac_upper`) is linked to affective and syntactic features, while sentiment (`vader_compound`) relates to social and cognitive words and capitalization, suggesting that the tone and emphasis of incoming titles guide how the subreddit frames its replies. 
 
 
 # Snowball Effect
