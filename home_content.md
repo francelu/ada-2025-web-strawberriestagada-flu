@@ -84,7 +84,7 @@ The linguistic characteristics evolution of negative outgoing interactions from 
 {% include_relative figs/swear_bubble_pic.html %}
 
 <!-- Text reviewed -->
-Analyzing the evolution of negative characteristics in conflict-related outgoing events from the subreddit the_donald reveals similar trends for certain features. Three peaks occurred during the same periods for the features `Negemo`, `vader_neg`, and `Affect`. Less obviously, peaks occurred for `Anger` and `Swear` as well. The first two peaks correspond to significant moments in Donald Trump’s 2016 campaign. The first peak occurred on February 22, 2016, during the Republican primary surge that month, and the second peak occurred on September 5, 2016, in relation to Labor Day, marking the start of the intensified general election campaign. The final peak occurred on January 19, 2017, the day before Trump's presidential inauguration.
+Analyzing the evolution of negative characteristics in conflict-related outgoing events from the subreddit the_donald reveals similar trends for certain features. Three peaks occurred during the same periods for the features `Negemo`, `vader_neg`, and `Affect`. Less obviously, peaks occurred for `Anger` and `Swear` as well. The first two peaks correspond to significant moments in Donald Trump’s 2016 campaign. The first peak occurred on February 22, 2016, during the Republican primary surge that month, and the second peak occurred on September 5, 2016, in relation to Labor Day, marking the start of the intensified general election campaign. The final peak occurred on January 19, 2017, the day before Trump's presidential inauguration. 
 
 <!-- To have title below picture too -->
 <div style="clear: both;"></div>
@@ -147,7 +147,7 @@ To delve deeper into the analysis of the real world, individual analyses were al
 ### Correlated Incoming Linguistic Features
 
 <!-- Text reviewed -->
-The tables below show the most correlated incoming features for each of the delta features. The incoming feature `frac_upper`, which corresponds to the proportion of capital letters in the incoming text, seems to be correlated with the most delta features, such as `delta_num_long_sentences` and `delta_frac_specials` (the proportion of special characters in the text). 
+The tables below show the most correlated incoming features for each of the delta features. 
 
 
 #### Analysis on the Body of the Posts
@@ -159,7 +159,9 @@ The tables below show the most correlated incoming features for each of the delt
 
 {% include_relative figs/title_donald_corr.html %}
 
-
+In the body analysis, the incoming feature `frac_upper`, which corresponds to the proportion of capital letters in the incoming text, seems to be correlated with the most delta features, such as `delta_num_long_sentences` and `delta_frac_specials` (the proportion of special characters in the text). 
+Indeed, `frac_upper` captures the intensity of the incoming conflict. High use of capital letters typically signals emphasis, urgency, or aggression. Such incoming messages are more likely to provoke stronger reactions in the targeted subreddit, leading to longer posts, more sentences, and higher character and word counts, as users respond with explanations, arguments, or counter-attacks rather than brief replies. This high occurence of positive correlations therefore suggest that capitalization may not be a causal driver by itself, but a proxy for conflict severity, which amplifies linguistic activity and stylistic expressiveness after the conflict.
+The analysis of titles reveals a markedly different mechanism. In contrast to the body text, `frac_upper` does not play a dominant role, and no single linguistic feature clearly stands out in terms of influence. This is further supported by the overall lower correlation values, indicating weaker and more diffuse associations between incoming features and LIWC changes in titles.
 
 ## The Rhythm of Recovery: How Communities Heal Their Linguistic Scars
 
