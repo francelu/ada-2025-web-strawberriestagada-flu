@@ -13,6 +13,9 @@ In the digital realm, words spread faster than intentions. A single post can ign
 <!-- Text reviewed -->
 This project investigates the dynamics of conflict between Reddit communities, considering language as a measurable indicator of social friction. Specifically, we examine how verbal attacks between subreddits can function as linguistic weapons, how communities recover from them, and whether repeated exposure to conflict can create a snowball effect of negativity. By linking these digital battles to real-world political events related to the 2016 U.S. presidential election, we aim to reveal the profound connection between online discourse and the offline world.
 
+<!-- To have text below picture too -->
+<div style="clear: both;"></div>
+
 
 # A Portrait of the Dataset
 
