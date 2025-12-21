@@ -1,10 +1,11 @@
 <iframe 
     id="negative-liwc-dashboard-donald-iframe"
     src="{{ 'assets/img/donald_analysis.html' | relative_url }}"
-    width="100%" 
+    width=auto
     height=auto
     frameborder="0"
-    scrolling="no">
+    scrolling="no"
+    style="display: block; margin: 0 auto;">
 </iframe>
 
 <script>
@@ -12,6 +13,7 @@ function resizeIframe() {
   const iframe = document.getElementById('negative-liwc-dashboard-donald-iframe');
   iframe.onload = () => {
     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    iframe.style.width = iframe.contentWindow.document.body.scrollWidth + 'px';
   };
 }
 
