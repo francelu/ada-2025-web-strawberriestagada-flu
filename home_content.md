@@ -84,7 +84,7 @@ The linguistic characteristics evolution of negative outgoing interactions from 
 {% include_relative figs/swear_bubble_pic.html %}
 
 <!-- Text reviewed -->
-Analyzing the evolution of negative characteristics in conflict-related outgoing events from the subreddit `the_donald` reveals similar trends for certain features. Indeed, two peaks can be observed during the same periods for the features `Negemo`, `Anger`, `vader_neg`, `Affect`, and, less obviously, for `frac_alpha` and `Swear`. These peaks occurred during weeks 2016-06 and 2017-02.
+Analyzing the evolution of negative characteristics in conflict-related outgoing events from the subreddit the_donald reveals similar trends for certain features. Three peaks occurred during the same periods for the features `Negemo`, `vader_neg`, and `Affect`. Less obviously, peaks occurred for `Anger` and `Swear` as well. The first two peaks correspond to significant moments in Donald Trump’s 2016 campaign. The first peak occurred on February 22, 2016, during the Republican primary surge that month, and the second peak occurred on September 5, 2016, in relation to Labor Day, marking the start of the intensified general election campaign. The final peak occurred on January 19, 2017, the day before Trump's presidential inauguration.
 
 <!-- To have title below picture too -->
 <div style="clear: both;"></div>
